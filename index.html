@@ -1,0 +1,2745 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TABO BOX — اكتشف عالمًا من الاختيارات المميزة في صندوق واحد." />
+  <title>TABO BOX | أكثر من مجرد صندوق</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+
+    :root {
+      --black: #0b0b0b;
+      --dark: #121212;
+      --gold: #c9a45c;
+      --gold-light: #e5c982;
+      --white: #fff;
+      --muted: #a8a8a8;
+      --line: rgba(255,255,255,.1);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: "Cairo", sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, textarea {
+      font: inherit;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    .gold {
+      color: var(--gold-light);
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 55px;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      padding: 13px 24px;
+      font-size: .9rem;
+      font-weight: 800;
+      transition: .25s ease;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #111;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: rgba(201,164,92,.55);
+      color: var(--gold-light);
+    }
+
+    .btn-outline:hover {
+      background: rgba(201,164,92,.1);
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(11,11,11,.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .navbar {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.65rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--gold-light);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      color: #c2c2c2;
+      font-size: .85rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--line);
+      color: white;
+      border-radius: 8px;
+      padding: 7px 12px;
+      font-size: 1.2rem;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 15% 30%, rgba(151,111,43,.15), transparent 45%),
+        linear-gradient(110deg, #0b0b0b, #16130e 100%);
+    }
+
+    .hero::before {
+      content: "TABO";
+      position: absolute;
+      left: -50px;
+      bottom: -95px;
+      color: rgba(255,255,255,.025);
+      font-size: clamp(9rem, 25vw, 22rem);
+      font-weight: 900;
+      letter-spacing: -12px;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      line-height: 1.3;
+      font-weight: 900;
+      margin-bottom: 22px;
+    }
+
+    .hero-copy h1 span {
+      display: block;
+      color: var(--gold-light);
+    }
+
+    .hero-copy p {
+      color: #bdbdbd;
+      max-width: 490px;
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 28px;
+      color: #999;
+      font-size: .75rem;
+    }
+
+    .hero-note strong {
+      color: var(--gold-light);
+    }
+
+    /* Product visual */
+    .box-stage {
+      position: relative;
+      min-height: 410px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box-glow {
+      position: absolute;
+      width: 330px;
+      height: 330px;
+      border-radius: 50%;
+      background: rgba(201,164,92,.12);
+      filter: blur(45px);
+    }
+
+    .gift-box {
+      position: relative;
+      width: min(330px, 75vw);
+      aspect-ratio: 1 / .78;
+      transform: rotate(-7deg);
+      filter: drop-shadow(0 28px 25px rgba(0,0,0,.45));
+    }
+
+    .box-lid {
+      position: absolute;
+      top: 5%;
+      left: 2%;
+      width: 96%;
+      height: 27%;
+      background: linear-gradient(135deg, #e1c17a, #8f6c31);
+      border: 1px solid #edcf8b;
+      transform: skewY(-10deg);
+      z-index: 2;
+    }
+
+    .box-lid::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 47%;
+      width: 13%;
+      height: 100%;
+      background: rgba(42,25,7,.2);
+    }
+
+    .box-front {
+      position: absolute;
+      left: 7%;
+      top: 30%;
+      width: 86%;
+      height: 61%;
+      background: linear-gradient(135deg, #c9a45c, #735326);
+      clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+      z-index: 1;
+    }
+
+    .box-front::before {
+      content: "";
+      position: absolute;
+      left: 45%;
+      top: 0;
+      width: 13%;
+      height: 100%;
+      background: rgba(44,26,8,.23);
+    }
+
+    .box-side {
+      position: absolute;
+      right: 0;
+      top: 30%;
+      width: 13%;
+      height: 61%;
+      background: #61461f;
+      clip-path: polygon(0 0,100% 12%,100% 100%,0 100%);
+    }
+
+    .box-label {
+      position: absolute;
+      z-index: 3;
+      top: 51%;
+      left: 19%;
+      color: #241a0b;
+      font-size: clamp(1.3rem, 4vw, 2.1rem);
+      font-weight: 900;
+      letter-spacing: 3px;
+      direction: ltr;
+    }
+
+    .floating-tag {
+      position: absolute;
+      right: 0;
+      top: 12%;
+      padding: 10px 16px;
+      background: rgba(22,22,22,.9);
+      border: 1px solid rgba(201,164,92,.4);
+      border-radius: 8px;
+      color: var(--gold-light);
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .floating-tag.bottom {
+      top: auto;
+      right: auto;
+      left: 0;
+      bottom: 12%;
+      color: white;
+    }
+
+    /* Features */
+    .features {
+      background: #101010;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 30px 0;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(201,164,92,.35);
+      border-radius: 12px;
+      color: var(--gold-light);
+      font-size: 1.2rem;
+    }
+
+    .feature h3 {
+      font-size: .9rem;
+      margin-bottom: 2px;
+    }
+
+    .feature p {
+      font-size: .72rem;
+      color: var(--muted);
+    }
+
+    /* Products */
+    .products {
+      background: #0b0b0b;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .product-card {
+      background: #151515;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: .3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(201,164,92,.5);
+    }
+
+    .product-image {
+      height: 215px;
+      background:
+        radial-gradient(circle at 50% 40%, rgba(201,164,92,.18), transparent 60%),
+        #1d1d1d;
+      display: grid;
+      place-items: center;
+      font-size: 5rem;
+      position: relative;
+    }
+
+    .product-image small {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: .65rem;
+      background: var(--gold);
+      color: #111;
+      border-radius: 5px;
+      padding: 3px 9px;
+      font-weight: 800;
+    }
+
+    .product-info {
+      padding: 22px;
+    }
+
+    .product-info h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .product-info p {
+      color: var(--muted);
+      font-size: .78rem;
+      min-height: 50px;
+      margin-bottom: 18px;
+    }
+
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .price {
+      color: var(--gold-light);
+      font-weight: 900;
+      font-size: 1.2rem;
+    }
+
+    .price small {
+      color: #888;
+      font-size: .7rem;
+      font-weight: 400;
+    }
+
+    .add-btn {
+      border: 1px solid rgba(201,164,92,.5);
+      background: transparent;
+      color: var(--gold-light);
+      border-radius: 8px;
+      padding: 7px 12px;
+      font-size: .75rem;
+      font-weight: 800;
+    }
+
+    .add-btn:hover {
+      background: var(--gold);
+      color: #111;
+    }
+
+    /* About */
+    .about {
+      background: #111;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-art {
+      min-height: 350px;
+      border: 1px solid rgba(201,164,92,.3);
+      border-radius: 25px;
+      background:
+        linear-gradient(145deg, rgba(201,164,92,.1), transparent),
+        #181818;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 35px;
+    }
+
+    .about-art h3 {
+      font-size: 3rem;
+      letter-spacing: 5px;
+      color: var(--gold-light);
+      direction: ltr;
+    }
+
+    .about-art p {
+      color: #aaa;
+      font-size: .8rem;
+    }
+
+    .about-copy h2 {
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.45;
+      margin-bottom: 20px;
+    }
+
+    .about-copy > p {
+      color: #aaa;
+      font-size: .9rem;
+      margin-bottom: 25px;
+    }
+
+    .checks {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .checks li {
+      list-style: none;
+      color: #ddd;
+      font-size: .85rem;
+    }
+
+    .checks li::before {
+      content: "✓";
+      color: var(--gold-light);
+      margin-left: 10px;
+      font-weight: 900;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background: #0b0b0b;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .testimonial {
+      background: #151515;
+      border: 1px solid var(--line);
+      padding: 25px;
+      border-radius: 16px;
+    }
+
+    .stars {
+      color: var(--gold-light);
+      letter-spacing: 4px;
+      font-size: .85rem;
+      margin-bottom: 15px;
+    }
+
+    .testimonial p {
+      color: #bbb;
+      font-size: .85rem;
+      margin-bottom: 20px;
+    }
+
+    .testimonial strong {
+      font-size: .8rem;
+    }
+
+    .testimonial small {
+      display: block;
+      color: #777;
+      font-size: .7rem;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 80px 0;
+      background:
+        radial-gradient(circle at center, rgba(201,164,92,.16), transparent 65%),
+        #17130d;
+      border-top: 1px solid rgba(201,164,92,.2);
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: #bdbdbd;
+      font-size: .9rem;
+      margin-bottom: 25px;
+    }
+
+    /* Footer */
+    footer {
+      background: #080808;
+      border-top: 1px solid var(--line);
+      padding: 50px 0 25px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 35px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+
+    .footer-brand p {
+      color: #888;
+      font-size: .8rem;
+      max-width: 300px;
+      margin-top: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      flex-wrap: wrap;
+      color: #999;
+      font-size: .8rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-bottom {
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+      color: #666;
+      font-size: .7rem;
+    }
+
+    /* Cart */
+    .cart-button {
+      position: fixed;
+      left: 22px;
+      bottom: 22px;
+      z-index: 60;
+      width: 55px;
+      height: 55px;
+      border: 1px solid rgba(201,164,92,.6);
+      border-radius: 50%;
+      background: var(--gold);
+      color: #111;
+      font-size: 1.25rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,.4);
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -4px;
+      right: -2px;
+      background: #e9d5a1;
+      color: #111;
+      border-radius: 50%;
+      font-size: .65rem;
+      min-width: 20px;
+      height: 20px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .cart-panel {
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: min(390px, 100%);
+      background: #171717;
+      border-right: 1px solid var(--line);
+      transform: translateX(-105%);
+      transition: transform .3s ease;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-panel.open {
+      transform: translateX(0);
+    }
+
+    .cart-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cart-head h3 {
+      font-size: 1.1rem;
+    }
+
+    .close-cart {
+      background: transparent;
+      border: 0;
+      color: white;
+      font-size: 1.4rem;
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 0;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: 1px solid var(--line);
+      padding: 14px 0;
+      font-size: .8rem;
+    }
+
+    .cart-item small {
+      color: #999;
+      display: block;
+    }
+
+    .remove-item {
+      background: transparent;
+      border: 0;
+      color: #e88d8d;
+      font-size: .7rem;
+    }
+
+    .cart-total {
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.65);
+      z-index: 90;
+      display: none;
+    }
+
+    .cart-overlay.open {
+      display: block;
+    }
+
+    .empty-cart {
+      color: #888;
+      font-size: .85rem;
+      text-align: center;
+      padding-top: 35px;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 90px;
+      right: 50%;
+      transform: translateX(50%) translateY(20px);
+      background: #e5c982;
+      color: #111;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: .8rem;
+      font-weight: 800;
+      opacity: 0;
+      pointer-events: none;
+      transition: .3s;
+      z-index: 120;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(50%) translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 850px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 75px 0;
+      }
+
+      .hero-copy {
+        text-align: center;
+      }
+
+      .hero-copy p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-note {
+        justify-content: center;
+      }
+
+      .box-stage {
+        min-height: 330px;
+      }
+
+      .about-art {
+        min-height: 250px;
+        order: 2;
+      }
+
+      .about-copy {
+        text-align: center;
+      }
+
+      .checks {
+        text-align: right;
+        display: inline-grid;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .product-grid,
+      .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 28px, 1160px);
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .navbar {
+        height: 68px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 68px;
+        right: 14px;
+        left: 14px;
+        background: #171717;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 18px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        display: none;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero-copy h1 {
+        font-size: 2.25rem;
+      }
+
+      .hero-copy p {
+        font-size: .85rem;
+      }
+
+      .box-stage {
+        min-height: 260px;
+      }
+
+      .gift-box {
+        width: 270px;
+      }
+
+      .box-glow {
+        width: 240px;
+        height: 240px;
+      }
+
+      .floating-tag {
+        font-size: .65rem;
+        padding: 7px 10px;
+      }
+
+      .product-grid,
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-image {
+        height: 190px;
+      }
+
+      .footer-top {
+        flex-direction: column;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        gap: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container navbar">
+      <a href="#" class="logo">TABO <span>BOX</span></a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">الرئيسية</a>
+        <a href="#products">الصناديق</a>
+        <a href="#about">عن تابو</a>
+        <a href="#reviews">آراء العملاء</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
+
+      <a href="#products" class="btn btn-primary nav-cta">اكتشف الآن</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">THE ART OF GIVING</div>
+          <h1>صندوق واحد،<br /><span>تجربة لا تُنسى.</span></h1>
+          <p>
+            اكتشف عالم TABO BOX. اختيارات مميزة، تفاصيل استثنائية،
+            وتجربة مصممة لتمنحك أكثر مما تتوقع.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary">اكتشف الصناديق ←</a>
+            <a href="#about" class="btn btn-outline">اعرف المزيد</a>
+          </div>
+
+          <div class="hero-note">
+            <strong>✦</strong>
+            <span>اختيارات بعناية • جودة تستحق الثقة</span>
+          </div>
+        </div>
+
+        <div class="box-stage" aria-label="تصميم توضيحي لصندوق TABO BOX">
+          <div class="box-glow"></div>
+          <div class="gift-box">
+            <div class="box-lid"></div>
+            <div class="box-front"></div>
+            <div class="box-side"></div>
+            <div class="box-label">TABO BOX</div>
+          </div>
+          <div class="floating-tag">PREMIUM COLLECTION</div>
+          <div class="floating-tag bottom">صُمم ليُبهر ✦</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+      <div class="container features-grid">
+        <div class="feature">
+          <div class="feature-icon">✦</div>
+          <div>
+            <h3>اختيارات مميزة</h3>
+            <p>منتجات مختارة بعناية لتجربة مختلفة.</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">◇</div>
+          <div>
+            <h3>تغليف أنيق</h3>
+            <p>تفاصيل فاخرة تليق بكل مناسبة.</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">✓</div>
+          <div>
+            <h3>تجربة موثوقة</h3>
+            <p>خدمة تهتم بالتفاصيل من البداية للنهاية.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section class="section products" id="products">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">OUR COLLECTION</div>
+          <h2>اختر صندوقك المفضل</h2>
+          <p>تشكيلة من الصناديق المصممة لتناسب ذوقك واحتياجاتك.</p>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-image">
+              <small>الأكثر طلبًا</small>
+              🎁
+            </div>
+            <div class="product-info">
+              <h3>TABO Classic</h3>
+              <p>صندوق أنيق بتشكيلة مميزة، مثالي للهدايا والمناسبات.</p>
+              <div class="product-bottom">
+                <div class="price">299 <small>ج.م</small></div>
+                <button class="add-btn" data-name="TABO Classic" data-price="299">أضف للسلة +</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <small>جديد</small>
+              ✨
+            </div>
+            <div class="product-info">
+              <h3>TABO Premium</h3>
+              <p>تجربة أكثر فخامة مع منتجات مختارة وتغليف استثنائي.</p>
+              <div class="product-bottom">
+                <div class="price">499 <small>ج.م</small></div>
+                <button class="add-btn" data-name="TABO Premium" data-price="499">أضف للسلة +</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <small>هدية مميزة</small>
+              💎
+            </div>
+            <div class="product-info">
+              <h3>TABO Signature</h3>
+              <p>صندوق راقٍ لمن يبحث عن هدية تحمل طابعًا خاصًا.</p>
+              <div class="product-bottom">
+                <div class="price">799 <small>ج.م</small></div>
+                <button class="add-btn" data-name="TABO Signature" data-price="799">أضف للسلة +</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div class="about-art">
+          <div>
+            <h3>TABO</h3>
+            <p>MORE THAN A BOX</p>
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <div class="eyebrow">WHY TABO BOX?</div>
+          <h2>نحن لا نقدم صندوقًا فقط،<br /><span class="gold">بل نصنع تجربة.</span></h2>
+          <p>
+            في TABO BOX نؤمن بأن القيمة الحقيقية تكمن في التفاصيل.
+            لذلك نعمل على تقديم تجربة تجمع بين الجودة، الذوق الرفيع،
+            والاختيارات التي تستحق أن تُهدى وتُقتنى.
+          </p>
+
+          <ul class="checks">
+            <li>تصميم راقٍ يعكس ذوقك الخاص.</li>
+            <li>اختيارات مدروسة بعناية.</li>
+            <li>تجربة مناسبة للهدايا والمناسبات المختلفة.</li>
+          </ul>
+
+          <a href="#contact" class="btn btn-primary">تواصل معنا ←</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section testimonials" id="reviews">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">CUSTOMER LOVE</div>
+          <h2>ماذا يقول عملاؤنا؟</h2>
+          <p>آراء تجريبية يمكنك استبدالها بتقييمات عملائك الحقيقية.</p>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>التغليف جميل جدًا، والتجربة كانت أفضل مما توقعت. بالتأكيد سأطلب مرة أخرى.</p>
+            <strong>عميل TABO</strong>
+            <small>تجربة شراء</small>
+          </article>
+
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>فكرة الصناديق رائعة، والتفاصيل تعطي إحساسًا بالفخامة والاهتمام.</p>
+            <strong>عميلة TABO</strong>
+            <small>تجربة شراء</small>
+          </article>
+
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>اختيار ممتاز كهدية. التصميم أنيق والمنتج وصل في حالة ممتازة.</p>
+            <strong>عميل TABO</strong>
+            <small>تجربة شراء</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="eyebrow">YOUR NEXT EXPERIENCE</div>
+        <h2>جاهز لاكتشاف عالم TABO BOX؟</h2>
+        <p>اختر صندوقك المفضل وابدأ تجربة مختلفة.</p>
+        <a href="#products" class="btn btn-primary">ابدأ اختيارك الآن ←</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="logo">TABO <span>BOX</span></a>
+          <p>أكثر من مجرد صندوق؛ تجربة تحمل طابعك الخاص.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#home">الرئيسية</a>
+          <a href="#products">الصناديق</a>
+          <a href="#about">عن تابو</a>
+          <a href="#contact">تواصل معنا</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> TABO BOX. جميع الحقوق محفوظة.</span>
+        <span>Designed with purpose ✦</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart -->
+  <button class="cart-button" id="cartButton" aria-label="فتح سلة المشتريات">
+    🛒
+    <span class="cart-count" id="cartCount">0</span>
+  </button>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <aside class="cart-panel" id="cartPanel" aria-label="سلة المشتريات">
+    <div class="cart-head">
+      <h3>سلة مشترياتك</h3>
+      <button class="close-cart" id="closeCart" aria-label="إغلاق السلة">×</button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+      <p class="empty-cart">السلة فارغة حاليًا.</p>
+    </div>
+
+    <div class="cart-total">
+      <span>الإجمالي</span>
+      <span id="cartTotal">0 ج.م</span>
+    </div>
+
+    <button class="btn btn-primary" id="checkoutButton">إتمام الطلب ←</button>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const navLinks = document.getElementById("navLinks");
+    const menuToggle = document.getElementById("menuToggle");
+    const cartButton = document.getElementById("cartButton");
+    const cartPanel = document.getElementById("cartPanel");
+    const cartOverlay = document.getElementById("cartOverlay");
+    const closeCart = document.getElementById("closeCart");
+    const cartItems = document.getElementById("cartItems");
+    const cartCount = document.getElementById("cartCount");
+    const cartTotal = document.getElementById("cartTotal");
+    const checkoutButton = document.getElementById("checkoutButton");
+    const toast = document.getElementById("toast");
+
+    let cart = [];
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 2200);
+    }
+
+    function openCart() {
+      cartPanel.classList.add("open");
+      cartOverlay.classList.add("open");
+    }
+
+    function closeCartPanel() {
+      cartPanel.classList.remove("open");
+      cartOverlay.classList.remove("open");
+    }
+
+    cartButton.addEventListener("click", openCart);
+    closeCart.addEventListener("click", closeCartPanel);
+    cartOverlay.addEventListener("click", closeCartPanel);
+
+    document.querySelectorAll(".add-btn").forEach(button => {
+      button.addEventListener("click", () => {
+        const name = button.dataset.name;
+        const price = Number(button.dataset.price);
+
+        const existing = cart.find(item => item.name === name);
+
+        if (existing) {
+          existing.quantity++;
+        } else {
+          cart.push({ name, price, quantity: 1 });
+        }
+
+        renderCart();
+        showToast("تمت إضافة المنتج إلى السلة");
+      });
+    });
+
+    function renderCart() {
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+      cartCount.textContent = totalItems;
+      cartTotal.textContent = `${totalPrice.toLocaleString("ar-EG")} ج.م`;
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<p class="empty-cart">السلة فارغة حاليًا.</p>';
+        return;
+      }
+
+      cartItems.innerHTML = cart.map((item, index) => `
+        <div class="cart-item">
+          <div>
+            <strong>${escapeHtml(item.name)}</strong>
+            <small>الكمية: ${item.quantity} × ${item.price} ج.م</small>
+          </div>
+          <button class="remove-item" data-index="${index}">حذف</button>
+        </div>
+      `).join("");
+
+      cartItems.querySelectorAll(".remove-item").forEach(button => {
+        button.addEventListener("click", () => {
+          cart.splice(Number(button.dataset.index), 1);
+          renderCart();
+        });
+      });
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      }[char]));
+    }
+
+    checkoutButton.addEventListener("click", () => {
+      if (cart.length === 0) {
+        showToast("أضف منتجًا إلى السلة أولًا");
+        return;
+      }
+
+      showToast("هذه نسخة تجريبية — اربط زر الطلب بنظام الدفع أو واتساب.");
+    });
+  </script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TABO BOX — اكتشف عالمًا من الاختيارات المميزة في صندوق واحد." />
+  <title>TABO BOX | أكثر من مجرد صندوق</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+
+    :root {
+      --black: #0b0b0b;
+      --dark: #121212;
+      --gold: #c9a45c;
+      --gold-light: #e5c982;
+      --white: #fff;
+      --muted: #a8a8a8;
+      --line: rgba(255,255,255,.1);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: "Cairo", sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, textarea {
+      font: inherit;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1160px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    .gold {
+      color: var(--gold-light);
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 55px;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid transparent;
+      border-radius: 9px;
+      padding: 13px 24px;
+      font-size: .9rem;
+      font-weight: 800;
+      transition: .25s ease;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #111;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: rgba(201,164,92,.55);
+      color: var(--gold-light);
+    }
+
+    .btn-outline:hover {
+      background: rgba(201,164,92,.1);
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(11,11,11,.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .navbar {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.65rem;
+      font-weight: 900;
+      letter-spacing: 2px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--gold-light);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      color: #c2c2c2;
+      font-size: .85rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--line);
+      color: white;
+      border-radius: 8px;
+      padding: 7px 12px;
+      font-size: 1.2rem;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 15% 30%, rgba(151,111,43,.15), transparent 45%),
+        linear-gradient(110deg, #0b0b0b, #16130e 100%);
+    }
+
+    .hero::before {
+      content: "TABO";
+      position: absolute;
+      left: -50px;
+      bottom: -95px;
+      color: rgba(255,255,255,.025);
+      font-size: clamp(9rem, 25vw, 22rem);
+      font-weight: 900;
+      letter-spacing: -12px;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 60px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      line-height: 1.3;
+      font-weight: 900;
+      margin-bottom: 22px;
+    }
+
+    .hero-copy h1 span {
+      display: block;
+      color: var(--gold-light);
+    }
+
+    .hero-copy p {
+      color: #bdbdbd;
+      max-width: 490px;
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 28px;
+      color: #999;
+      font-size: .75rem;
+    }
+
+    .hero-note strong {
+      color: var(--gold-light);
+    }
+
+    /* Product visual */
+    .box-stage {
+      position: relative;
+      min-height: 410px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box-glow {
+      position: absolute;
+      width: 330px;
+      height: 330px;
+      border-radius: 50%;
+      background: rgba(201,164,92,.12);
+      filter: blur(45px);
+    }
+
+    .gift-box {
+      position: relative;
+      width: min(330px, 75vw);
+      aspect-ratio: 1 / .78;
+      transform: rotate(-7deg);
+      filter: drop-shadow(0 28px 25px rgba(0,0,0,.45));
+    }
+
+    .box-lid {
+      position: absolute;
+      top: 5%;
+      left: 2%;
+      width: 96%;
+      height: 27%;
+      background: linear-gradient(135deg, #e1c17a, #8f6c31);
+      border: 1px solid #edcf8b;
+      transform: skewY(-10deg);
+      z-index: 2;
+    }
+
+    .box-lid::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 47%;
+      width: 13%;
+      height: 100%;
+      background: rgba(42,25,7,.2);
+    }
+
+    .box-front {
+      position: absolute;
+      left: 7%;
+      top: 30%;
+      width: 86%;
+      height: 61%;
+      background: linear-gradient(135deg, #c9a45c, #735326);
+      clip-path: polygon(0 0,100% 0,100% 100%,0 100%);
+      z-index: 1;
+    }
+
+    .box-front::before {
+      content: "";
+      position: absolute;
+      left: 45%;
+      top: 0;
+      width: 13%;
+      height: 100%;
+      background: rgba(44,26,8,.23);
+    }
+
+    .box-side {
+      position: absolute;
+      right: 0;
+      top: 30%;
+      width: 13%;
+      height: 61%;
+      background: #61461f;
+      clip-path: polygon(0 0,100% 12%,100% 100%,0 100%);
+    }
+
+    .box-label {
+      position: absolute;
+      z-index: 3;
+      top: 51%;
+      left: 19%;
+      color: #241a0b;
+      font-size: clamp(1.3rem, 4vw, 2.1rem);
+      font-weight: 900;
+      letter-spacing: 3px;
+      direction: ltr;
+    }
+
+    .floating-tag {
+      position: absolute;
+      right: 0;
+      top: 12%;
+      padding: 10px 16px;
+      background: rgba(22,22,22,.9);
+      border: 1px solid rgba(201,164,92,.4);
+      border-radius: 8px;
+      color: var(--gold-light);
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .floating-tag.bottom {
+      top: auto;
+      right: auto;
+      left: 0;
+      bottom: 12%;
+      color: white;
+    }
+
+    /* Features */
+    .features {
+      background: #101010;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 30px 0;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(201,164,92,.35);
+      border-radius: 12px;
+      color: var(--gold-light);
+      font-size: 1.2rem;
+    }
+
+    .feature h3 {
+      font-size: .9rem;
+      margin-bottom: 2px;
+    }
+
+    .feature p {
+      font-size: .72rem;
+      color: var(--muted);
+    }
+
+    /* Products */
+    .products {
+      background: #0b0b0b;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .product-card {
+      background: #151515;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: .3s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(201,164,92,.5);
+    }
+
+    .product-image {
+      height: 215px;
+      background:
+        radial-gradient(circle at 50% 40%, rgba(201,164,92,.18), transparent 60%),
+        #1d1d1d;
+      display: grid;
+      place-items: center;
+      font-size: 5rem;
+      position: relative;
+    }
+
+    .product-image small {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      font-size: .65rem;
+      background: var(--gold);
+      color: #111;
+      border-radius: 5px;
+      padding: 3px 9px;
+      font-weight: 800;
+    }
+
+    .product-info {
+      padding: 22px;
+    }
+
+    .product-info h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+
+    .product-info p {
+      color: var(--muted);
+      font-size: .78rem;
+      min-height: 50px;
+      margin-bottom: 18px;
+    }
+
+    .product-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .price {
+      color: var(--gold-light);
+      font-weight: 900;
+      font-size: 1.2rem;
+    }
+
+    .price small {
+      color: #888;
+      font-size: .7rem;
+      font-weight: 400;
+    }
+
+    .add-btn {
+      border: 1px solid rgba(201,164,92,.5);
+      background: transparent;
+      color: var(--gold-light);
+      border-radius: 8px;
+      padding: 7px 12px;
+      font-size: .75rem;
+      font-weight: 800;
+    }
+
+    .add-btn:hover {
+      background: var(--gold);
+      color: #111;
+    }
+
+    /* About */
+    .about {
+      background: #111;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-art {
+      min-height: 350px;
+      border: 1px solid rgba(201,164,92,.3);
+      border-radius: 25px;
+      background:
+        linear-gradient(145deg, rgba(201,164,92,.1), transparent),
+        #181818;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 35px;
+    }
+
+    .about-art h3 {
+      font-size: 3rem;
+      letter-spacing: 5px;
+      color: var(--gold-light);
+      direction: ltr;
+    }
+
+    .about-art p {
+      color: #aaa;
+      font-size: .8rem;
+    }
+
+    .about-copy h2 {
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.45;
+      margin-bottom: 20px;
+    }
+
+    .about-copy > p {
+      color: #aaa;
+      font-size: .9rem;
+      margin-bottom: 25px;
+    }
+
+    .checks {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .checks li {
+      list-style: none;
+      color: #ddd;
+      font-size: .85rem;
+    }
+
+    .checks li::before {
+      content: "✓";
+      color: var(--gold-light);
+      margin-left: 10px;
+      font-weight: 900;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background: #0b0b0b;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .testimonial {
+      background: #151515;
+      border: 1px solid var(--line);
+      padding: 25px;
+      border-radius: 16px;
+    }
+
+    .stars {
+      color: var(--gold-light);
+      letter-spacing: 4px;
+      font-size: .85rem;
+      margin-bottom: 15px;
+    }
+
+    .testimonial p {
+      color: #bbb;
+      font-size: .85rem;
+      margin-bottom: 20px;
+    }
+
+    .testimonial strong {
+      font-size: .8rem;
+    }
+
+    .testimonial small {
+      display: block;
+      color: #777;
+      font-size: .7rem;
+    }
+
+    /* CTA */
+    .cta {
+      padding: 80px 0;
+      background:
+        radial-gradient(circle at center, rgba(201,164,92,.16), transparent 65%),
+        #17130d;
+      border-top: 1px solid rgba(201,164,92,.2);
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.4;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: #bdbdbd;
+      font-size: .9rem;
+      margin-bottom: 25px;
+    }
+
+    /* Footer */
+    footer {
+      background: #080808;
+      border-top: 1px solid var(--line);
+      padding: 50px 0 25px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 35px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+
+    .footer-brand p {
+      color: #888;
+      font-size: .8rem;
+      max-width: 300px;
+      margin-top: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      flex-wrap: wrap;
+      color: #999;
+      font-size: .8rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .footer-bottom {
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+      color: #666;
+      font-size: .7rem;
+    }
+
+    /* Cart */
+    .cart-button {
+      position: fixed;
+      left: 22px;
+      bottom: 22px;
+      z-index: 60;
+      width: 55px;
+      height: 55px;
+      border: 1px solid rgba(201,164,92,.6);
+      border-radius: 50%;
+      background: var(--gold);
+      color: #111;
+      font-size: 1.25rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,.4);
+    }
+
+    .cart-count {
+      position: absolute;
+      top: -4px;
+      right: -2px;
+      background: #e9d5a1;
+      color: #111;
+      border-radius: 50%;
+      font-size: .65rem;
+      min-width: 20px;
+      height: 20px;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    .cart-panel {
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: min(390px, 100%);
+      background: #171717;
+      border-right: 1px solid var(--line);
+      transform: translateX(-105%);
+      transition: transform .3s ease;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-panel.open {
+      transform: translateX(0);
+    }
+
+    .cart-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .cart-head h3 {
+      font-size: 1.1rem;
+    }
+
+    .close-cart {
+      background: transparent;
+      border: 0;
+      color: white;
+      font-size: 1.4rem;
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 0;
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: 1px solid var(--line);
+      padding: 14px 0;
+      font-size: .8rem;
+    }
+
+    .cart-item small {
+      color: #999;
+      display: block;
+    }
+
+    .remove-item {
+      background: transparent;
+      border: 0;
+      color: #e88d8d;
+      font-size: .7rem;
+    }
+
+    .cart-total {
+      border-top: 1px solid var(--line);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .cart-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.65);
+      z-index: 90;
+      display: none;
+    }
+
+    .cart-overlay.open {
+      display: block;
+    }
+
+    .empty-cart {
+      color: #888;
+      font-size: .85rem;
+      text-align: center;
+      padding-top: 35px;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 90px;
+      right: 50%;
+      transform: translateX(50%) translateY(20px);
+      background: #e5c982;
+      color: #111;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: .8rem;
+      font-weight: 800;
+      opacity: 0;
+      pointer-events: none;
+      transition: .3s;
+      z-index: 120;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(50%) translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 850px) {
+      .hero-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 75px 0;
+      }
+
+      .hero-copy {
+        text-align: center;
+      }
+
+      .hero-copy p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-note {
+        justify-content: center;
+      }
+
+      .box-stage {
+        min-height: 330px;
+      }
+
+      .about-art {
+        min-height: 250px;
+        order: 2;
+      }
+
+      .about-copy {
+        text-align: center;
+      }
+
+      .checks {
+        text-align: right;
+        display: inline-grid;
+      }
+
+      .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .product-grid,
+      .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 28px, 1160px);
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .navbar {
+        height: 68px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 68px;
+        right: 14px;
+        left: 14px;
+        background: #171717;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 18px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        display: none;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .hero-copy h1 {
+        font-size: 2.25rem;
+      }
+
+      .hero-copy p {
+        font-size: .85rem;
+      }
+
+      .box-stage {
+        min-height: 260px;
+      }
+
+      .gift-box {
+        width: 270px;
+      }
+
+      .box-glow {
+        width: 240px;
+        height: 240px;
+      }
+
+      .floating-tag {
+        font-size: .65rem;
+        padding: 7px 10px;
+      }
+
+      .product-grid,
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-image {
+        height: 190px;
+      }
+
+      .footer-top {
+        flex-direction: column;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        gap: 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="container navbar">
+      <a href="#" class="logo">TABO <span>BOX</span></a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">الرئيسية</a>
+        <a href="#products">الصناديق</a>
+        <a href="#about">عن تابو</a>
+        <a href="#reviews">آراء العملاء</a>
+        <a href="#contact">تواصل معنا</a>
+      </nav>
+
+      <a href="#products" class="btn btn-primary nav-cta">اكتشف الآن</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">THE ART OF GIVING</div>
+          <h1>صندوق واحد،<br /><span>تجربة لا تُنسى.</span></h1>
+          <p>
+            اكتشف عالم TABO BOX. اختيارات مميزة، تفاصيل استثنائية،
+            وتجربة مصممة لتمنحك أكثر مما تتوقع.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary">اكتشف الصناديق ←</a>
+            <a href="#about" class="btn btn-outline">اعرف المزيد</a>
+          </div>
+
+          <div class="hero-note">
+            <strong>✦</strong>
+            <span>اختيارات بعناية • جودة تستحق الثقة</span>
+          </div>
+        </div>
+
+        <div class="box-stage" aria-label="تصميم توضيحي لصندوق TABO BOX">
+          <div class="box-glow"></div>
+          <div class="gift-box">
+            <div class="box-lid"></div>
+            <div class="box-front"></div>
+            <div class="box-side"></div>
+            <div class="box-label">TABO BOX</div>
+          </div>
+          <div class="floating-tag">PREMIUM COLLECTION</div>
+          <div class="floating-tag bottom">صُمم ليُبهر ✦</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+      <div class="container features-grid">
+        <div class="feature">
+          <div class="feature-icon">✦</div>
+          <div>
+            <h3>اختيارات مميزة</h3>
+            <p>منتجات مختارة بعناية لتجربة مختلفة.</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">◇</div>
+          <div>
+            <h3>تغليف أنيق</h3>
+            <p>تفاصيل فاخرة تليق بكل مناسبة.</p>
+          </div>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">✓</div>
+          <div>
+            <h3>تجربة موثوقة</h3>
+            <p>خدمة تهتم بالتفاصيل من البداية للنهاية.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section class="section products" id="products">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">OUR COLLECTION</div>
+          <h2>اختر صندوقك المفضل</h2>
+          <p>تشكيلة من الصناديق المصممة لتناسب ذوقك واحتياجاتك.</p>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card">
+            <div class="product-image">
+              <small>الأكثر طلبًا</small>
+              🎁
+            </div>
+            <div class="product-info">
+              <h3>TABO Classic</h3>
+              <p>صندوق أنيق بتشكيلة مميزة، مثالي للهدايا والمناسبات.</p>
+              <div class="product-bottom">
+                <div class="price">299 <small>ج.م</small></div>
+                <button class="add-btn" data-name="TABO Classic" data-price="299">أضف للسلة +</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <small>جديد</small>
+              ✨
+            </div>
+            <div class="product-info">
+              <h3>TABO Premium</h3>
+              <p>تجربة أكثر فخامة مع منتجات مختارة وتغليف استثنائي.</p>
+              <div class="product-bottom">
+                <div class="price">499 <small>ج.م</small></div>
+                <button class="add-btn" data-name="TABO Premium" data-price="499">أضف للسلة +</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-image">
+              <small>هدية مميزة</small>
+              💎
+            </div>
+            <div class="product-info">
+              <h3>TABO Signature</h3>
+              <p>صندوق راقٍ لمن يبحث عن هدية تحمل طابعًا خاصًا.</p>
+              <div class="product-bottom">
+                <div class="price">799 <small>ج.م</small></div>
+                <button class="add-btn" data-name="TABO Signature" data-price="799">أضف للسلة +</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="section about" id="about">
+      <div class="container about-grid">
+        <div class="about-art">
+          <div>
+            <h3>TABO</h3>
+            <p>MORE THAN A BOX</p>
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <div class="eyebrow">WHY TABO BOX?</div>
+          <h2>نحن لا نقدم صندوقًا فقط،<br /><span class="gold">بل نصنع تجربة.</span></h2>
+          <p>
+            في TABO BOX نؤمن بأن القيمة الحقيقية تكمن في التفاصيل.
+            لذلك نعمل على تقديم تجربة تجمع بين الجودة، الذوق الرفيع،
+            والاختيارات التي تستحق أن تُهدى وتُقتنى.
+          </p>
+
+          <ul class="checks">
+            <li>تصميم راقٍ يعكس ذوقك الخاص.</li>
+            <li>اختيارات مدروسة بعناية.</li>
+            <li>تجربة مناسبة للهدايا والمناسبات المختلفة.</li>
+          </ul>
+
+          <a href="#contact" class="btn btn-primary">تواصل معنا ←</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section testimonials" id="reviews">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">CUSTOMER LOVE</div>
+          <h2>ماذا يقول عملاؤنا؟</h2>
+          <p>آراء تجريبية يمكنك استبدالها بتقييمات عملائك الحقيقية.</p>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>التغليف جميل جدًا، والتجربة كانت أفضل مما توقعت. بالتأكيد سأطلب مرة أخرى.</p>
+            <strong>عميل TABO</strong>
+            <small>تجربة شراء</small>
+          </article>
+
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>فكرة الصناديق رائعة، والتفاصيل تعطي إحساسًا بالفخامة والاهتمام.</p>
+            <strong>عميلة TABO</strong>
+            <small>تجربة شراء</small>
+          </article>
+
+          <article class="testimonial">
+            <div class="stars">★★★★★</div>
+            <p>اختيار ممتاز كهدية. التصميم أنيق والمنتج وصل في حالة ممتازة.</p>
+            <strong>عميل TABO</strong>
+            <small>تجربة شراء</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="eyebrow">YOUR NEXT EXPERIENCE</div>
+        <h2>جاهز لاكتشاف عالم TABO BOX؟</h2>
+        <p>اختر صندوقك المفضل وابدأ تجربة مختلفة.</p>
+        <a href="#products" class="btn btn-primary">ابدأ اختيارك الآن ←</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="logo">TABO <span>BOX</span></a>
+          <p>أكثر من مجرد صندوق؛ تجربة تحمل طابعك الخاص.</p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#home">الرئيسية</a>
+          <a href="#products">الصناديق</a>
+          <a href="#about">عن تابو</a>
+          <a href="#contact">تواصل معنا</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> TABO BOX. جميع الحقوق محفوظة.</span>
+        <span>Designed with purpose ✦</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart -->
+  <button class="cart-button" id="cartButton" aria-label="فتح سلة المشتريات">
+    🛒
+    <span class="cart-count" id="cartCount">0</span>
+  </button>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <aside class="cart-panel" id="cartPanel" aria-label="سلة المشتريات">
+    <div class="cart-head">
+      <h3>سلة مشترياتك</h3>
+      <button class="close-cart" id="closeCart" aria-label="إغلاق السلة">×</button>
+    </div>
+
+    <div class="cart-items" id="cartItems">
+      <p class="empty-cart">السلة فارغة حاليًا.</p>
+    </div>
+
+    <div class="cart-total">
+      <span>الإجمالي</span>
+      <span id="cartTotal">0 ج.م</span>
+    </div>
+
+    <button class="btn btn-primary" id="checkoutButton">إتمام الطلب ←</button>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+    const navLinks = document.getElementById("navLinks");
+    const menuToggle = document.getElementById("menuToggle");
+    const cartButton = document.getElementById("cartButton");
+    const cartPanel = document.getElementById("cartPanel");
+    const cartOverlay = document.getElementById("cartOverlay");
+    const closeCart = document.getElementById("closeCart");
+    const cartItems = document.getElementById("cartItems");
+    const cartCount = document.getElementById("cartCount");
+    const cartTotal = document.getElementById("cartTotal");
+    const checkoutButton = document.getElementById("checkoutButton");
+    const toast = document.getElementById("toast");
+
+    let cart = [];
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      setTimeout(() => toast.classList.remove("show"), 2200);
+    }
+
+    function openCart() {
+      cartPanel.classList.add("open");
+      cartOverlay.classList.add("open");
+    }
+
+    function closeCartPanel() {
+      cartPanel.classList.remove("open");
+      cartOverlay.classList.remove("open");
+    }
+
+    cartButton.addEventListener("click", openCart);
+    closeCart.addEventListener("click", closeCartPanel);
+    cartOverlay.addEventListener("click", closeCartPanel);
+
+    document.querySelectorAll(".add-btn").forEach(button => {
+      button.addEventListener("click", () => {
+        const name = button.dataset.name;
+        const price = Number(button.dataset.price);
+
+        const existing = cart.find(item => item.name === name);
+
+        if (existing) {
+          existing.quantity++;
+        } else {
+          cart.push({ name, price, quantity: 1 });
+        }
+
+        renderCart();
+        showToast("تمت إضافة المنتج إلى السلة");
+      });
+    });
+
+    function renderCart() {
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
+
+      cartCount.textContent = totalItems;
+      cartTotal.textContent = `${totalPrice.toLocaleString("ar-EG")} ج.م`;
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = '<p class="empty-cart">السلة فارغة حاليًا.</p>';
+        return;
+      }
+
+      cartItems.innerHTML = cart.map((item, index) => `
+        <div class="cart-item">
+          <div>
+            <strong>${escapeHtml(item.name)}</strong>
+            <small>الكمية: ${item.quantity} × ${item.price} ج.م</small>
+          </div>
+          <button class="remove-item" data-index="${index}">حذف</button>
+        </div>
+      `).join("");
+
+      cartItems.querySelectorAll(".remove-item").forEach(button => {
+        button.addEventListener("click", () => {
+          cart.splice(Number(button.dataset.index), 1);
+          renderCart();
+        });
+      });
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, char => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      }[char]));
+    }
+
+    checkoutButton.addEventListener("click", () => {
+      if (cart.length === 0) {
+        showToast("أضف منتجًا إلى السلة أولًا");
+        return;
+      }
+
+      showToast("هذه نسخة تجريبية — اربط زر الطلب بنظام الدفع أو واتساب.");
+    });
+  </script>
+</body>
+</html>
