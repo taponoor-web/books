@@ -4,28 +4,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TABO BOOKS - مؤلفات عبدالتواب أنور. كتب في تطوير الذات والمال والرواية.">
+  <meta name="description" content="TABO BOOKS - مؤلفات عبدالتواب أنور">
   <title>TABO BOOKS | عبدالتواب أنور</title>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
 
     :root {
       --bg: #080d14;
-      --surface: #111b27;
-      --surface-2: #182535;
+      --card: #111b27;
       --gold: #f5b91b;
       --gold-light: #ffda70;
       --text: #f8fafc;
       --muted: #a2afbd;
-      --line: rgba(255,255,255,.09);
+      --line: rgba(255,255,255,.1);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 85px;
+      scroll-padding-top: 80px;
     }
 
     body {
@@ -33,83 +32,17 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.8;
-      overflow-x: hidden;
     }
 
-    a { color: inherit; text-decoration: none; }
-    button, input { font: inherit; }
-    button { cursor: pointer; }
-    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    button { font: inherit; cursor: pointer; }
+    .container { width: min(1160px, calc(100% - 32px)); margin: auto; }
 
-    .container {
-      width: min(1160px, calc(100% - 32px));
-      margin: auto;
-    }
-
-    .gold { color: var(--gold); }
-
-    .section { padding: 90px 0; }
-
-    .heading {
-      max-width: 650px;
-      text-align: center;
-      margin: 0 auto 45px;
-    }
-
-    .heading small {
-      color: var(--gold);
-      font-weight: 800;
-      letter-spacing: 2px;
-    }
-
-    .heading h2 {
-      font-size: clamp(1.8rem, 4vw, 2.7rem);
-      line-height: 1.45;
-      margin: 10px 0;
-    }
-
-    .heading p {
-      color: var(--muted);
-      font-size: .9rem;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 23px;
-      border-radius: 9px;
-      font-size: .85rem;
-      font-weight: 800;
-      border: 1px solid transparent;
-      transition: .25s;
-    }
-
-    .btn-primary {
-      background: var(--gold);
-      color: #101010;
-    }
-
-    .btn-primary:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      border-color: rgba(245,185,27,.5);
-      color: var(--gold-light);
-    }
-
-    .btn-outline:hover { background: rgba(245,185,27,.1); }
-
-    /* Header */
     header {
       position: sticky;
       top: 0;
-      z-index: 20;
-      background: rgba(8,13,20,.95);
-      backdrop-filter: blur(14px);
+      z-index: 10;
+      background: rgba(8,13,20,.96);
       border-bottom: 1px solid var(--line);
     }
 
@@ -122,9 +55,8 @@
     }
 
     .logo {
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       font-weight: 900;
-      letter-spacing: 1px;
       direction: ltr;
       white-space: nowrap;
     }
@@ -133,69 +65,77 @@
 
     .nav-links {
       display: flex;
-      align-items: center;
-      gap: 27px;
+      gap: 28px;
+      font-size: .82rem;
       color: #d0d7df;
-      font-size: .8rem;
     }
 
     .nav-links a:hover { color: var(--gold); }
 
-    .menu {
-      display: none;
-      border: 1px solid var(--line);
-      background: transparent;
-      color: white;
-      border-radius: 8px;
-      padding: 6px 12px;
-      font-size: 1.2rem;
-    }
-
-    /* Hero */
     .hero {
-      padding: 100px 0 75px;
-      position: relative;
-      overflow: hidden;
+      padding: 100px 0 85px;
       background:
-        radial-gradient(circle at 80% 35%, rgba(245,185,27,.12), transparent 35%),
+        radial-gradient(circle at 80% 30%, rgba(245,185,27,.13), transparent 35%),
         linear-gradient(120deg, #080d14, #101b28);
     }
 
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      align-items: center;
       gap: 55px;
+      align-items: center;
     }
 
-    .hero-copy small {
-      display: inline-block;
-      background: rgba(245,185,27,.1);
-      border: 1px solid rgba(245,185,27,.25);
-      color: var(--gold-light);
-      border-radius: 30px;
-      padding: 4px 15px;
-      font-size: .72rem;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.1rem, 5vw, 4rem);
-      line-height: 1.35;
-      font-weight: 900;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      display: block;
+    .hero-copy small,
+    .section-label {
       color: var(--gold);
+      font-weight: 800;
+      font-size: .75rem;
+      letter-spacing: 1px;
     }
+
+    h1 {
+      font-size: clamp(2.1rem, 5vw, 4rem);
+      line-height: 1.4;
+      margin: 15px 0 20px;
+      font-weight: 900;
+    }
+
+    h1 span { color: var(--gold); }
 
     .hero p {
-      color: #b6c0cb;
+      color: var(--muted);
       font-size: .95rem;
       max-width: 490px;
       margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border-radius: 9px;
+      padding: 12px 23px;
+      font-size: .82rem;
+      font-weight: 800;
+      border: 1px solid transparent;
+      transition: .25s;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #111;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: rgba(245,185,27,.5);
+      color: var(--gold-light);
     }
 
     .hero-actions {
@@ -204,131 +144,55 @@
       gap: 12px;
     }
 
-    .stats {
-      display: flex;
-      gap: 35px;
-      margin-top: 35px;
-      flex-wrap: wrap;
-    }
-
-    .stats strong {
-      display: block;
-      color: var(--gold);
-      font-size: 1.3rem;
-    }
-
-    .stats span {
-      color: var(--muted);
-      font-size: .7rem;
-    }
-
-    /* Hero visual */
-    .hero-visual {
-      min-height: 380px;
-      display: grid;
-      place-items: center;
-      position: relative;
-    }
-
-    .hero-visual::before {
-      content: "";
-      position: absolute;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: rgba(245,185,27,.12);
-      filter: blur(55px);
-    }
-
-    .book {
-      position: relative;
-      width: min(300px, 80%);
+    .hero-book {
+      width: 280px;
       aspect-ratio: 3 / 4;
-      border: 5px solid #263545;
+      margin: auto;
+      border: 4px solid #293b4c;
       border-radius: 10px 18px 18px 10px;
-      background: linear-gradient(145deg, #1c2c3c, #080e15);
-      box-shadow: 20px 30px 45px rgba(0,0,0,.5);
-      transform: rotate(-7deg);
+      background: linear-gradient(145deg, #23384b, #0c131b);
+      box-shadow: 20px 30px 50px rgba(0,0,0,.5);
       display: grid;
       place-items: center;
       text-align: center;
-      z-index: 1;
+      transform: rotate(-6deg);
     }
 
-    .book::before {
-      content: "";
-      position: absolute;
-      right: -13px;
-      top: 4px;
-      bottom: 4px;
-      width: 13px;
-      background: #263545;
-      border-radius: 0 6px 6px 0;
-    }
-
-    .book-content {
-      border: 1px solid rgba(245,185,27,.5);
+    .hero-book-inner {
       width: 80%;
       padding: 30px 12px;
+      border: 1px solid rgba(245,185,27,.5);
     }
 
-    .book-icon { font-size: 3.4rem; color: var(--gold); }
-
-    .book h3 {
-      font-size: 1.3rem;
-      direction: ltr;
-      letter-spacing: 1px;
-      margin-top: 10px;
-    }
-
-    .book p {
-      font-size: .7rem;
-      color: #d3d9df;
-      margin: 5px 0 0;
-    }
-
-    .floating {
-      position: absolute;
-      background: #152333;
-      border: 1px solid rgba(245,185,27,.35);
-      border-radius: 10px;
-      padding: 8px 13px;
-      color: var(--gold-light);
-      font-size: .7rem;
-      z-index: 3;
-    }
-
-    .floating.one { top: 5%; right: 0; }
-    .floating.two { bottom: 5%; left: 0; color: white; }
-
-    /* Features */
-    .features {
-      background: #0e1722;
-      border-block: 1px solid var(--line);
-      padding: 28px 0;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    .feature {
-      text-align: center;
-      padding: 8px;
-    }
-
-    .feature-icon {
-      font-size: 1.8rem;
+    .hero-book strong {
+      display: block;
       color: var(--gold);
+      font-size: 1.5rem;
+      direction: ltr;
     }
 
-    .feature h3 { font-size: .85rem; margin: 4px 0; }
-    .feature p { color: var(--muted); font-size: .7rem; }
+    .hero-book p {
+      font-size: .75rem;
+      margin: 8px 0 0;
+    }
 
-    /* Books */
-    .books { background: var(--bg); }
+    .section { padding: 85px 0; }
+
+    .heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 45px;
+    }
+
+    .heading h2 {
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.5;
+      margin: 8px 0;
+    }
+
+    .heading p { color: var(--muted); font-size: .85rem; }
+
+    .books { background: #0c141e; }
 
     .book-grid {
       display: grid;
@@ -337,7 +201,7 @@
     }
 
     .book-card {
-      background: var(--surface);
+      background: var(--card);
       border: 1px solid var(--line);
       border-radius: 14px;
       overflow: hidden;
@@ -346,7 +210,7 @@
 
     .book-card:hover {
       transform: translateY(-5px);
-      border-color: rgba(245,185,27,.5);
+      border-color: rgba(245,185,27,.55);
     }
 
     .cover {
@@ -355,25 +219,24 @@
       place-items: center;
       text-align: center;
       padding: 25px;
-      background: linear-gradient(145deg, #293a4b, #111b27);
       position: relative;
-    }
-
-    .cover.yellow {
       background: linear-gradient(145deg, #e2af20, #7d5a08);
       color: #111;
     }
 
     .cover.blue {
       background: linear-gradient(145deg, #35536e, #122333);
+      color: white;
     }
 
     .cover.red {
       background: linear-gradient(145deg, #733d46, #24151b);
+      color: white;
     }
 
     .cover.dark {
       background: linear-gradient(145deg, #35404a, #10151a);
+      color: white;
     }
 
     .cover h3 {
@@ -395,7 +258,7 @@
       right: 12px;
       background: var(--gold);
       color: #111;
-      padding: 2px 8px;
+      padding: 2px 9px;
       border-radius: 4px;
       font-size: .6rem;
       font-weight: 800;
@@ -410,27 +273,27 @@
 
     .author {
       color: var(--gold-light);
-      font-size: .78rem;
-      margin-bottom: 5px;
+      font-size: .76rem;
     }
 
     .book-info p {
       color: var(--muted);
       font-size: .75rem;
-      margin-bottom: 16px;
+      margin: 7px 0 18px;
+      min-height: 52px;
     }
 
     .book-bottom {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
+      gap: 12px;
     }
 
     .price {
       color: var(--gold);
       font-weight: 900;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       white-space: nowrap;
     }
 
@@ -440,32 +303,40 @@
       font-weight: 400;
     }
 
-    .add {
-      background: transparent;
-      border: 1px solid rgba(245,185,27,.55);
-      color: var(--gold-light);
+    .buy-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--gold);
+      color: #111;
       border-radius: 7px;
-      padding: 7px 11px;
+      padding: 8px 12px;
       font-size: .7rem;
-      font-weight: 800;
+      font-weight: 900;
+      transition: .25s;
     }
 
-    .add:hover { background: var(--gold); color: #111; }
+    .buy-button:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
 
-    /* About */
-    .about { background: #0e1722; }
+    .about {
+      background: var(--bg);
+    }
 
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 65px;
+      gap: 60px;
       align-items: center;
     }
 
     .about-art {
-      min-height: 320px;
+      min-height: 300px;
       border: 1px solid rgba(245,185,27,.25);
-      border-radius: 22px;
+      border-radius: 20px;
       background: linear-gradient(145deg, #1b2a39, #0d151e);
       display: grid;
       place-items: center;
@@ -474,9 +345,9 @@
     }
 
     .about-art strong {
-      font-size: clamp(1.7rem, 4vw, 3rem);
-      letter-spacing: 2px;
-      direction: ltr;
+      display: block;
+      color: var(--gold);
+      font-size: clamp(1.7rem, 4vw, 2.7rem);
     }
 
     .about-art p {
@@ -490,7 +361,7 @@
       margin: 10px 0 20px;
     }
 
-    .about-copy > p {
+    .about-copy p {
       color: var(--muted);
       font-size: .9rem;
     }
@@ -498,9 +369,7 @@
     .checks {
       list-style: none;
       margin: 22px 0;
-      display: grid;
-      gap: 10px;
-      font-size: .85rem;
+      font-size: .82rem;
     }
 
     .checks li::before {
@@ -510,31 +379,9 @@
       margin-left: 10px;
     }
 
-    /* CTA */
-    .cta {
-      text-align: center;
-      padding: 75px 0;
-      background:
-        radial-gradient(circle, rgba(245,185,27,.15), transparent 65%),
-        #151e28;
-      border-block: 1px solid var(--line);
-    }
-
-    .cta h2 {
-      font-size: clamp(1.8rem, 4vw, 2.8rem);
-      line-height: 1.5;
-    }
-
-    .cta p {
-      color: var(--muted);
-      margin: 12px 0 25px;
-      font-size: .9rem;
-    }
-
-    /* Footer */
     footer {
       background: #060a10;
-      padding: 45px 0 20px;
+      padding: 40px 0 20px;
     }
 
     .footer-top {
@@ -542,10 +389,10 @@
       justify-content: space-between;
       gap: 25px;
       flex-wrap: wrap;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
-    .footer-brand p {
+    .footer-top p {
       color: var(--muted);
       font-size: .75rem;
       margin-top: 8px;
@@ -572,195 +419,33 @@
       flex-wrap: wrap;
     }
 
-    /* Cart */
-    .cart-button {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      z-index: 40;
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      border: 1px solid rgba(245,185,27,.6);
-      background: var(--gold);
-      font-size: 1.25rem;
-    }
-
-    .cart-count {
-      position: absolute;
-      top: -5px;
-      right: -2px;
-      background: white;
-      color: #111;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
-      font-size: .65rem;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-    }
-
-    .overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,.65);
-      z-index: 49;
-      display: none;
-    }
-
-    .overlay.open { display: block; }
-
-    .cart {
-      position: fixed;
-      z-index: 50;
-      top: 0;
-      left: 0;
-      width: min(390px, 100%);
-      height: 100%;
-      background: #101a26;
-      border-right: 1px solid var(--line);
-      padding: 25px;
-      transform: translateX(-105%);
-      transition: transform .3s;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .cart.open { transform: translateX(0); }
-
-    .cart-head {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid var(--line);
-      padding-bottom: 18px;
-    }
-
-    .cart-head h3 { font-size: 1rem; }
-
-    .close {
-      background: none;
-      border: 0;
-      color: white;
-      font-size: 1.4rem;
-    }
-
-    .cart-items {
-      flex: 1;
-      overflow-y: auto;
-      padding: 18px 0;
-    }
-
-    .cart-item {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      border-bottom: 1px solid var(--line);
-      padding: 12px 0;
-      font-size: .8rem;
-    }
-
-    .cart-item small {
-      display: block;
-      color: var(--muted);
-    }
-
-    .remove {
-      background: none;
-      border: 0;
-      color: #ef9999;
-      font-size: .7rem;
-    }
-
-    .empty {
-      color: var(--muted);
-      text-align: center;
-      padding: 30px 0;
-      font-size: .85rem;
-    }
-
-    .total {
-      border-top: 1px solid var(--line);
-      padding-top: 18px;
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 15px;
-      font-weight: 800;
-    }
-
-    .toast {
-      position: fixed;
-      bottom: 90px;
-      right: 50%;
-      transform: translate(50%, 20px);
-      background: var(--gold);
-      color: #111;
-      padding: 9px 18px;
-      border-radius: 8px;
-      font-size: .75rem;
-      font-weight: 800;
-      opacity: 0;
-      pointer-events: none;
-      transition: .25s;
-      z-index: 100;
-    }
-
-    .toast.show {
-      opacity: 1;
-      transform: translate(50%, 0);
-    }
-
-    @media (max-width: 950px) {
+    @media (max-width: 900px) {
       .hero-grid, .about-grid {
         grid-template-columns: 1fr;
-        gap: 35px;
+        gap: 40px;
       }
-
-      .book-grid { grid-template-columns: repeat(2, 1fr); }
-      .features-grid { grid-template-columns: repeat(2, 1fr); }
 
       .hero-copy { text-align: center; }
       .hero-copy p { margin-inline: auto; }
-      .hero-actions, .stats { justify-content: center; }
-      .hero-visual { min-height: 330px; }
-      .about-copy { text-align: center; }
-      .checks { display: inline-grid; text-align: right; }
+      .hero-actions { justify-content: center; }
+
+      .book-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 600px) {
       .container { width: calc(100% - 28px); }
-      .section { padding: 65px 0; }
+      .section { padding: 60px 0; }
       .nav { height: 68px; }
-      .menu { display: block; }
 
       .nav-links {
-        display: none;
-        position: absolute;
-        top: 68px;
-        right: 14px;
-        left: 14px;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
-        padding: 18px;
-        background: #111b27;
-        border: 1px solid var(--line);
-        border-radius: 12px;
+        gap: 14px;
+        font-size: .7rem;
       }
 
-      .nav-links.open { display: flex; }
-      .nav-cta { display: none; }
-
       .hero { padding: 65px 0; }
-      .hero h1 { font-size: 2.2rem; }
-      .hero p { font-size: .82rem; }
-      .book { width: 250px; }
-      .hero-visual { min-height: 285px; }
-      .floating { font-size: .6rem; }
-
-      .book-grid, .features-grid { grid-template-columns: 1fr; }
+      .hero-book { width: 245px; }
+      .book-grid { grid-template-columns: 1fr; }
       .cover { height: 230px; }
-
       .footer-top, .footer-bottom { flex-direction: column; }
     }
   </style>
@@ -773,15 +458,13 @@
     <div class="container nav">
       <a href="#" class="logo">📖 TABO <span>BOOKS</span></a>
 
-      <nav class="nav-links" id="navLinks">
+      <nav class="nav-links">
         <a href="#home">الرئيسية</a>
         <a href="#books">كتبي</a>
         <a href="#about">عن المؤلف</a>
-        <a href="#contact">تواصل معنا</a>
       </nav>
 
-      <a href="#books" class="btn btn-primary nav-cta">تصفح كتبي ↓</a>
-      <button class="menu" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+      <a href="#books" class="btn btn-primary">تصفح كتبي ↓</a>
     </div>
   </header>
 
@@ -800,97 +483,45 @@
           </h1>
 
           <p>
-            مرحبًا بك في TABO BOOKS، المساحة التي تجمع مؤلفاتي
-            في تطوير الذات والمال والرواية. اكتشف كتبي وابدأ
-            رحلتك مع المعرفة والإلهام.
+            مرحبًا بك في TABO BOOKS، حيث تجد مؤلفات عبدالتواب أنور
+            في تطوير الذات والمال والرواية، في مكان واحد.
           </p>
 
           <div class="hero-actions">
             <a href="#books" class="btn btn-primary">اكتشف كتبي الآن ↓</a>
-            <a href="#about" class="btn btn-outline">عن عبدالتواب أنور</a>
-          </div>
-
-          <div class="stats">
-            <div>
-              <strong>05</strong>
-              <span>مؤلفات مبدئية</span>
-            </div>
-            <div>
-              <strong>PDF</strong>
-              <span>كتب رقمية</span>
-            </div>
-            <div>
-              <strong>100%</strong>
-              <span>من تأليفي</span>
-            </div>
+            <a href="#about" class="btn btn-outline">عن المؤلف</a>
           </div>
         </div>
 
-        <div class="hero-visual" aria-label="غلاف توضيحي لعلامة TABO BOOKS">
-          <div class="book">
-            <div class="book-content">
-              <div class="book-icon">📖</div>
-              <h3>TABO BOOKS</h3>
-              <p>Read More<br>Be More</p>
-            </div>
+        <div class="hero-book">
+          <div class="hero-book-inner">
+            <strong>TABO BOOKS</strong>
+            <p>عبدالتواب أنور</p>
+            <p>اقرأ أكثر، كن أكثر</p>
           </div>
-
-          <div class="floating one">مؤلفات عبدالتواب أنور ✦</div>
-          <div class="floating two">اقرأ أكثر، كن أكثر</div>
         </div>
 
       </div>
     </section>
 
-    <!-- Features -->
-    <section class="features">
-      <div class="container features-grid">
-
-        <div class="feature">
-          <div class="feature-icon">📚</div>
-          <h3>مؤلفات أصلية</h3>
-          <p>كتبي الخاصة بقلم عبدالتواب أنور.</p>
-        </div>
-
-        <div class="feature">
-          <div class="feature-icon">⚡</div>
-          <h3>تحميل رقمي</h3>
-          <p>الوصول إلى الكتاب بعد إتمام الشراء.</p>
-        </div>
-
-        <div class="feature">
-          <div class="feature-icon">💳</div>
-          <h3>دفع بالجنيه المصري</h3>
-          <p>أسعار معروضة بالجنيه المصري.</p>
-        </div>
-
-        <div class="feature">
-          <div class="feature-icon">✦</div>
-          <h3>رحلة معرفية</h3>
-          <p>أفكار تساعدك على القراءة والتطور.</p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- My Books -->
+    <!-- Books -->
     <section class="section books" id="books">
       <div class="container">
 
         <div class="heading">
-          <small>MY BOOKS</small>
+          <div class="section-label">MY BOOKS</div>
           <h2>كتبي ومؤلفاتي</h2>
           <p>
-            خمسة عناوين مبدئية من أعمال عبدالتواب أنور.
-            اختر الكتاب الذي يلفت انتباهك.
+            اختر كتابك المفضل، ثم اضغط على «شراء وتحميل»
+            للانتقال إلى صفحة الدفع الخاصة به.
           </p>
         </div>
 
         <div class="book-grid">
 
-          <!-- Book 1 -->
+          <!-- 1. المليون الأول -->
           <article class="book-card">
-            <div class="cover yellow">
+            <div class="cover">
               <span class="tag">الأحدث</span>
               <div>
                 <h3>المليون<br>الأول</h3>
@@ -905,14 +536,14 @@
 
               <div class="book-bottom">
                 <span class="price">300 <small>ج.م</small></span>
-                <button class="add" data-name="المليون الأول" data-price="300">
-                  أضف للسلة +
-                </button>
+                <a class="buy-button" data-book="million" href="#">
+                  شراء وتحميل
+                </a>
               </div>
             </div>
           </article>
 
-          <!-- Book 2 -->
+          <!-- 2. إتمرد -->
           <article class="book-card">
             <div class="cover red">
               <div>
@@ -928,14 +559,14 @@
 
               <div class="book-bottom">
                 <span class="price">300 <small>ج.م</small></span>
-                <button class="add" data-name="إتمرد" data-price="300">
-                  أضف للسلة +
-                </button>
+                <a class="buy-button" data-book="rebel" href="#">
+                  شراء وتحميل
+                </a>
               </div>
             </div>
           </article>
 
-          <!-- Book 3 -->
+          <!-- 3. نحو القمة -->
           <article class="book-card">
             <div class="cover blue">
               <div>
@@ -947,18 +578,18 @@
             <div class="book-info">
               <h3>نحو القمة</h3>
               <div class="author">تأليف: عبدالتواب أنور</div>
-              <p>رحلة في تطوير الذات، وبناء الشخصية، وصناعة تعريفك للنجاح.</p>
+              <p>رحلة في تطوير الذات وبناء الشخصية وصناعة تعريفك للنجاح.</p>
 
               <div class="book-bottom">
                 <span class="price">300 <small>ج.م</small></span>
-                <button class="add" data-name="نحو القمة" data-price="300">
-                  أضف للسلة +
-                </button>
+                <a class="buy-button" data-book="summit" href="#">
+                  شراء وتحميل
+                </a>
               </div>
             </div>
           </article>
 
-          <!-- Book 4 -->
+          <!-- 4. رواية عشق -->
           <article class="book-card">
             <div class="cover dark">
               <div>
@@ -974,16 +605,16 @@
 
               <div class="book-bottom">
                 <span class="price">300 <small>ج.م</small></span>
-                <button class="add" data-name="رواية عشق" data-price="300">
-                  أضف للسلة +
-                </button>
+                <a class="buy-button" data-book="eshq" href="#">
+                  شراء وتحميل
+                </a>
               </div>
             </div>
           </article>
 
-          <!-- Book 5 -->
+          <!-- 5. رواية نهد -->
           <article class="book-card">
-            <div class="cover yellow">
+            <div class="cover">
               <span class="tag">رواية</span>
               <div>
                 <h3>رواية<br>نهد</h3>
@@ -998,9 +629,9 @@
 
               <div class="book-bottom">
                 <span class="price">300 <small>ج.م</small></span>
-                <button class="add" data-name="رواية نهد" data-price="300">
-                  أضف للسلة +
-                </button>
+                <a class="buy-button" data-book="nahd" href="#">
+                  شراء وتحميل
+                </a>
               </div>
             </div>
           </article>
@@ -1009,24 +640,24 @@
       </div>
     </section>
 
-    <!-- About Author -->
+    <!-- About -->
     <section class="section about" id="about">
       <div class="container about-grid">
 
         <div class="about-art">
           <div>
-            <strong class="gold">عبدالتواب أنور</strong>
+            <strong>عبدالتواب أنور</strong>
             <p>مؤلف TABO BOOKS</p>
             <p>اقرأ أكثر · كن أكثر</p>
           </div>
         </div>
 
         <div class="about-copy">
-          <small class="gold">ABOUT THE AUTHOR</small>
+          <div class="section-label">ABOUT THE AUTHOR</div>
 
           <h2>
             كلمات تُكتب اليوم،<br>
-            <span class="gold">وأثر يبقى غدًا.</span>
+            <span style="color:var(--gold)">وأثر يبقى غدًا.</span>
           </h2>
 
           <p>
@@ -1041,18 +672,9 @@
             <li>روايات تستكشف الحب والمشاعر.</li>
           </ul>
 
-          <a href="#books" class="btn btn-primary">تصفح جميع كتبي ←</a>
+          <a href="#books" class="btn btn-primary">تصفح كتبي ←</a>
         </div>
 
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta" id="contact">
-      <div class="container">
-        <h2>أي كتاب سيكون بدايتك؟ 📚</h2>
-        <p>اختر عنوانك المفضل وابدأ رحلتك مع TABO BOOKS.</p>
-        <a href="#books" class="btn btn-primary">اكتشف المؤلفات الآن ↓</a>
       </div>
     </section>
 
@@ -1063,7 +685,7 @@
     <div class="container">
 
       <div class="footer-top">
-        <div class="footer-brand">
+        <div>
           <a href="#" class="logo">📖 TABO <span>BOOKS</span></a>
           <p>مؤلفات عبدالتواب أنور — اقرأ أكثر، كن أكثر.</p>
         </div>
@@ -1072,7 +694,6 @@
           <a href="#home">الرئيسية</a>
           <a href="#books">كتبي</a>
           <a href="#about">عن المؤلف</a>
-          <a href="#contact">تواصل معنا</a>
         </div>
       </div>
 
@@ -1084,181 +705,110 @@
     </div>
   </footer>
 
-  <!-- Shopping Cart -->
-  <button class="cart-button" id="cartButton" aria-label="فتح سلة المشتريات">
-    🛒
-    <span class="cart-count" id="cartCount">0</span>
-  </button>
-
-  <div class="overlay" id="overlay"></div>
-
-  <aside class="cart" id="cart" aria-label="سلة المشتريات">
-
-    <div class="cart-head">
-      <h3>سلة المشتريات</h3>
-      <button class="close" id="closeCart" aria-label="إغلاق السلة">×</button>
-    </div>
-
-    <div class="cart-items" id="cartItems">
-      <p class="empty">السلة فارغة حاليًا.</p>
-    </div>
-
-    <div class="total">
-      <span>الإجمالي</span>
-      <span id="total">0 ج.م</span>
-    </div>
-
-    <button class="btn btn-primary" id="checkout">إتمام الطلب ←</button>
-
-  </aside>
-
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-
   <script>
-    const navLinks = document.getElementById("navLinks");
-    const menuToggle = document.getElementById("menuToggle");
-    const cart = document.getElementById("cart");
-    const overlay = document.getElementById("overlay");
-    const cartItems = document.getElementById("cartItems");
-    const cartCount = document.getElementById("cartCount");
-    const total = document.getElementById("total");
-    const toast = document.getElementById("toast");
+    /*
+      ==================================================
+      إعدادات الكتب — عدّل روابط كل كتاب هنا فقط
+      ==================================================
 
-    let items = [];
+      paymentUrl  = رابط الدفع الخاص بالكتاب.
+      downloadUrl = رابط PDF الخاص بالكتاب.
+
+      مهم:
+      رابط التحميل لا يصبح محميًا بمجرد وضعه في HTML.
+      يجب أن تتولى بوابة الدفع أو نظام الخادم تسليم
+      رابط التحميل بعد نجاح عملية الدفع.
+    */
+
+    const books = {
+
+      million: {
+        name: "المليون الأول",
+        price: 300,
+
+        paymentUrl: "ضع_هنا_رابط_دفع_المليون_الأول",
+
+        downloadUrl: "ضع_هنا_رابط_تحميل_المليون_الأول"
+      },
+
+      rebel: {
+        name: "إتمرد",
+        price: 300,
+
+        paymentUrl: "ضع_هنا_رابط_دفع_إتمرد",
+
+        downloadUrl: "ضع_هنا_رابط_تحميل_إتمرد"
+      },
+
+      summit: {
+        name: "نحو القمة",
+        price: 300,
+
+        paymentUrl: "ضع_هنا_رابط_دفع_نحو_القمة",
+
+        downloadUrl: "ضع_هنا_رابط_تحميل_نحو_القمة"
+      },
+
+      eshq: {
+        name: "رواية عشق",
+        price: 300,
+
+        paymentUrl: "ضع_هنا_رابط_دفع_رواية_عشق",
+
+        downloadUrl: "ضع_هنا_رابط_تحميل_رواية_عشق"
+      },
+
+      nahd: {
+        name: "رواية نهد",
+        price: 300,
+
+        paymentUrl: "ضع_هنا_رابط_دفع_رواية_نهد",
+
+        downloadUrl: "ضع_هنا_رابط_تحميل_رواية_نهد"
+      }
+
+    };
 
     document.getElementById("year").textContent =
       new Date().getFullYear();
 
-    // Mobile menu
-    menuToggle.addEventListener("click", () => {
-      const open = navLinks.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(open));
-    });
+    /*
+      كل زر مرتبط بكتاب مستقل.
+      الضغط عليه ينقل العميل إلى رابط الدفع الخاص بذلك الكتاب.
+    */
 
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-      });
-    });
+    document.querySelectorAll("[data-book]").forEach(button => {
 
-    // Notifications
-    function showToast(message) {
-      toast.textContent = message;
-      toast.classList.add("show");
+      button.addEventListener("click", event => {
 
-      setTimeout(() => {
-        toast.classList.remove("show");
-      }, 2200);
-    }
+        const bookId = button.dataset.book;
+        const book = books[bookId];
 
-    // Cart controls
-    function openCart() {
-      cart.classList.add("open");
-      overlay.classList.add("open");
-    }
-
-    function closeCartPanel() {
-      cart.classList.remove("open");
-      overlay.classList.remove("open");
-    }
-
-    document.getElementById("cartButton")
-      .addEventListener("click", openCart);
-
-    document.getElementById("closeCart")
-      .addEventListener("click", closeCartPanel);
-
-    overlay.addEventListener("click", closeCartPanel);
-
-    // Add books
-    document.querySelectorAll(".add").forEach(button => {
-      button.addEventListener("click", () => {
-        const name = button.dataset.name;
-        const price = Number(button.dataset.price);
-
-        const existing = items.find(item => item.name === name);
-
-        if (existing) {
-          existing.quantity++;
-        } else {
-          items.push({
-            name,
-            price,
-            quantity: 1
-          });
-        }
-
-        renderCart();
-        showToast("تمت إضافة الكتاب إلى السلة 📚");
-      });
-    });
-
-    // Render cart
-    function renderCart() {
-      const count = items.reduce(
-        (sum, item) => sum + item.quantity, 0
-      );
-
-      const amount = items.reduce(
-        (sum, item) => sum + item.price * item.quantity, 0
-      );
-
-      cartCount.textContent = count;
-      total.textContent = `${amount.toLocaleString("ar-EG")} ج.م`;
-
-      if (!items.length) {
-        cartItems.innerHTML =
-          '<p class="empty">السلة فارغة حاليًا.</p>';
-        return;
-      }
-
-      cartItems.innerHTML = items.map((item, index) => `
-        <div class="cart-item">
-          <div>
-            <strong>${escapeHtml(item.name)}</strong>
-            <small>
-              ${item.quantity} ×
-              ${item.price.toLocaleString("ar-EG")} ج.م
-            </small>
-          </div>
-
-          <button class="remove" data-index="${index}">
-            حذف
-          </button>
-        </div>
-      `).join("");
-
-      cartItems.querySelectorAll(".remove").forEach(button => {
-        button.addEventListener("click", () => {
-          items.splice(Number(button.dataset.index), 1);
-          renderCart();
-        });
-      });
-    }
-
-    function escapeHtml(value) {
-      return String(value).replace(/[&<>"']/g, char => ({
-        "&": "&amp;",
-        "<": "&lt;",
-        ">": "&gt;",
-        '"': "&quot;",
-        "'": "&#39;"
-      }[char]));
-    }
-
-    // Checkout placeholder
-    document.getElementById("checkout")
-      .addEventListener("click", () => {
-        if (!items.length) {
-          showToast("أضف كتابًا إلى السلة أولًا");
+        if (!book) {
+          event.preventDefault();
+          alert("تعذر العثور على بيانات هذا الكتاب.");
           return;
         }
 
-        showToast(
-          "نسخة تجريبية — اربط الزر ببوابة الدفع."
-        );
+        if (
+          !book.paymentUrl ||
+          book.paymentUrl.startsWith("ضع_هنا")
+        ) {
+          event.preventDefault();
+
+          alert(
+            "لم يتم إضافة رابط الدفع لهذا الكتاب بعد."
+          );
+
+          return;
+        }
+
+        // يمكن استبدال href برابط الدفع الفعلي لكل كتاب.
+        button.href = book.paymentUrl;
+
       });
+
+    });
   </script>
 
 </body>
