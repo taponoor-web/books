@@ -4,20 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TABO BOOKS - مكتبتك الرقمية لاكتشاف أفضل الكتب الإلكترونية.">
-  <title>TABO BOOKS | اقرأ أكثر، كن أكثر</title>
+  <meta name="description" content="TABO BOOKS - مؤلفات عبدالتواب أنور. كتب في تطوير الذات والمال والرواية.">
+  <title>TABO BOOKS | عبدالتواب أنور</title>
 
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
 
     :root {
       --bg: #080d14;
-      --card: #111b27;
-      --card-2: #162231;
+      --surface: #111b27;
+      --surface-2: #182535;
       --gold: #f5b91b;
-      --gold-light: #ffd76a;
-      --white: #f8fafc;
-      --muted: #9aa8b8;
+      --gold-light: #ffda70;
+      --text: #f8fafc;
+      --muted: #a2afbd;
       --line: rgba(255,255,255,.09);
     }
 
@@ -25,13 +25,13 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 80px;
+      scroll-padding-top: 85px;
     }
 
     body {
       font-family: "Cairo", sans-serif;
       background: var(--bg);
-      color: var(--white);
+      color: var(--text);
       line-height: 1.8;
       overflow-x: hidden;
     }
@@ -51,8 +51,8 @@
     .section { padding: 90px 0; }
 
     .heading {
-      text-align: center;
       max-width: 650px;
+      text-align: center;
       margin: 0 auto 45px;
     }
 
@@ -108,7 +108,7 @@
       position: sticky;
       top: 0;
       z-index: 20;
-      background: rgba(8,13,20,.94);
+      background: rgba(8,13,20,.95);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--line);
     }
@@ -133,8 +133,8 @@
 
     .nav-links {
       display: flex;
-      gap: 27px;
       align-items: center;
+      gap: 27px;
       color: #d0d7df;
       font-size: .8rem;
     }
@@ -153,9 +153,9 @@
 
     /* Hero */
     .hero {
+      padding: 100px 0 75px;
       position: relative;
       overflow: hidden;
-      padding: 100px 0 75px;
       background:
         radial-gradient(circle at 80% 35%, rgba(245,185,27,.12), transparent 35%),
         linear-gradient(120deg, #080d14, #101b28);
@@ -164,8 +164,8 @@
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 55px;
       align-items: center;
+      gap: 55px;
     }
 
     .hero-copy small {
@@ -215,7 +215,6 @@
       display: block;
       color: var(--gold);
       font-size: 1.3rem;
-      direction: ltr;
     }
 
     .stats span {
@@ -223,7 +222,7 @@
       font-size: .7rem;
     }
 
-    /* Hero book mockup */
+    /* Hero visual */
     .hero-visual {
       min-height: 380px;
       display: grid;
@@ -247,9 +246,7 @@
       aspect-ratio: 3 / 4;
       border: 5px solid #263545;
       border-radius: 10px 18px 18px 10px;
-      background:
-        linear-gradient(90deg, rgba(0,0,0,.4), transparent 12%),
-        linear-gradient(145deg, #1c2c3c, #080e15);
+      background: linear-gradient(145deg, #1c2c3c, #080e15);
       box-shadow: 20px 30px 45px rgba(0,0,0,.5);
       transform: rotate(-7deg);
       display: grid;
@@ -335,12 +332,12 @@
 
     .book-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
     }
 
     .book-card {
-      background: var(--card);
+      background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 14px;
       overflow: hidden;
@@ -353,33 +350,46 @@
     }
 
     .cover {
-      height: 225px;
+      height: 245px;
       display: grid;
       place-items: center;
       text-align: center;
-      padding: 20px;
+      padding: 25px;
       background: linear-gradient(145deg, #293a4b, #111b27);
       position: relative;
     }
 
-    .cover.yellow { background: linear-gradient(145deg, #e2af20, #7d5a08); color: #111; }
-    .cover.blue { background: linear-gradient(145deg, #35536e, #122333); }
-    .cover.dark { background: linear-gradient(145deg, #35404a, #10151a); }
+    .cover.yellow {
+      background: linear-gradient(145deg, #e2af20, #7d5a08);
+      color: #111;
+    }
+
+    .cover.blue {
+      background: linear-gradient(145deg, #35536e, #122333);
+    }
+
+    .cover.red {
+      background: linear-gradient(145deg, #733d46, #24151b);
+    }
+
+    .cover.dark {
+      background: linear-gradient(145deg, #35404a, #10151a);
+    }
 
     .cover h3 {
-      font-size: 1.35rem;
-      line-height: 1.4;
-      direction: ltr;
+      font-size: 1.65rem;
+      line-height: 1.5;
+      font-weight: 900;
     }
 
     .cover small {
       display: block;
-      font-size: .65rem;
-      margin-top: 8px;
+      font-size: .7rem;
+      margin-top: 10px;
       opacity: .8;
     }
 
-    .tag {
+    .cover .tag {
       position: absolute;
       top: 12px;
       right: 12px;
@@ -391,33 +401,51 @@
       font-weight: 800;
     }
 
-    .book-info { padding: 18px; }
+    .book-info { padding: 20px; }
 
-    .book-info h3 { font-size: .95rem; margin-bottom: 4px; }
-    .book-info p { color: var(--muted); font-size: .72rem; margin-bottom: 14px; }
+    .book-info h3 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .author {
+      color: var(--gold-light);
+      font-size: .78rem;
+      margin-bottom: 5px;
+    }
+
+    .book-info p {
+      color: var(--muted);
+      font-size: .75rem;
+      margin-bottom: 16px;
+    }
 
     .book-bottom {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 8px;
+      gap: 10px;
     }
 
     .price {
       color: var(--gold);
       font-weight: 900;
-      font-size: 1.05rem;
-      direction: ltr;
+      font-size: 1.15rem;
+      white-space: nowrap;
     }
 
-    .price small { font-size: .65rem; color: var(--muted); }
+    .price small {
+      color: var(--muted);
+      font-size: .65rem;
+      font-weight: 400;
+    }
 
     .add {
       background: transparent;
       border: 1px solid rgba(245,185,27,.55);
       color: var(--gold-light);
       border-radius: 7px;
-      padding: 6px 10px;
+      padding: 7px 11px;
       font-size: .7rem;
       font-weight: 800;
     }
@@ -442,15 +470,19 @@
       display: grid;
       place-items: center;
       text-align: center;
+      padding: 25px;
     }
 
     .about-art strong {
-      font-size: 3rem;
+      font-size: clamp(1.7rem, 4vw, 3rem);
       letter-spacing: 2px;
       direction: ltr;
     }
 
-    .about-art p { color: var(--muted); font-size: .75rem; }
+    .about-art p {
+      color: var(--muted);
+      font-size: .75rem;
+    }
 
     .about-copy h2 {
       font-size: clamp(1.7rem, 4vw, 2.5rem);
@@ -458,7 +490,10 @@
       margin: 10px 0 20px;
     }
 
-    .about-copy > p { color: var(--muted); font-size: .9rem; }
+    .about-copy > p {
+      color: var(--muted);
+      font-size: .9rem;
+    }
 
     .checks {
       list-style: none;
@@ -475,27 +510,6 @@
       margin-left: 10px;
     }
 
-    /* Reviews */
-    .reviews { background: var(--bg); }
-
-    .review-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .review {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 24px;
-    }
-
-    .stars { color: var(--gold); letter-spacing: 3px; }
-    .review p { color: #c0c9d3; font-size: .8rem; margin: 12px 0 18px; }
-    .review strong { font-size: .8rem; }
-    .review small { display: block; color: var(--muted); font-size: .65rem; }
-
     /* CTA */
     .cta {
       text-align: center;
@@ -511,7 +525,11 @@
       line-height: 1.5;
     }
 
-    .cta p { color: var(--muted); margin: 12px 0 25px; font-size: .9rem; }
+    .cta p {
+      color: var(--muted);
+      margin: 12px 0 25px;
+      font-size: .9rem;
+    }
 
     /* Footer */
     footer {
@@ -527,7 +545,11 @@
       margin-bottom: 30px;
     }
 
-    .footer-brand p { color: var(--muted); font-size: .75rem; margin-top: 8px; }
+    .footer-brand p {
+      color: var(--muted);
+      font-size: .75rem;
+      margin-top: 8px;
+    }
 
     .footer-links {
       display: flex;
@@ -638,7 +660,10 @@
       font-size: .8rem;
     }
 
-    .cart-item small { display: block; color: var(--muted); }
+    .cart-item small {
+      display: block;
+      color: var(--muted);
+    }
 
     .remove {
       background: none;
@@ -686,9 +711,14 @@
     }
 
     @media (max-width: 950px) {
+      .hero-grid, .about-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
       .book-grid { grid-template-columns: repeat(2, 1fr); }
       .features-grid { grid-template-columns: repeat(2, 1fr); }
-      .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 35px; }
+
       .hero-copy { text-align: center; }
       .hero-copy p { margin-inline: auto; }
       .hero-actions, .stats { justify-content: center; }
@@ -702,6 +732,7 @@
       .section { padding: 65px 0; }
       .nav { height: 68px; }
       .menu { display: block; }
+
       .nav-links {
         display: none;
         position: absolute;
@@ -716,18 +747,20 @@
         border: 1px solid var(--line);
         border-radius: 12px;
       }
+
       .nav-links.open { display: flex; }
       .nav-cta { display: none; }
+
       .hero { padding: 65px 0; }
       .hero h1 { font-size: 2.2rem; }
       .hero p { font-size: .82rem; }
       .book { width: 250px; }
       .hero-visual { min-height: 285px; }
       .floating { font-size: .6rem; }
-      .book-grid, .review-grid { grid-template-columns: 1fr; }
-      .features-grid { grid-template-columns: 1fr 1fr; }
-      .feature h3 { font-size: .78rem; }
-      .feature p { font-size: .65rem; }
+
+      .book-grid, .features-grid { grid-template-columns: 1fr; }
+      .cover { height: 230px; }
+
       .footer-top, .footer-bottom { flex-direction: column; }
     }
   </style>
@@ -735,56 +768,65 @@
 
 <body>
 
+  <!-- Header -->
   <header>
     <div class="container nav">
       <a href="#" class="logo">📖 TABO <span>BOOKS</span></a>
 
       <nav class="nav-links" id="navLinks">
         <a href="#home">الرئيسية</a>
-        <a href="#books">الكتب</a>
-        <a href="#about">مميزاتنا</a>
-        <a href="#reviews">آراء العملاء</a>
+        <a href="#books">كتبي</a>
+        <a href="#about">عن المؤلف</a>
         <a href="#contact">تواصل معنا</a>
       </nav>
 
-      <a href="#books" class="btn btn-primary nav-cta">ابدأ الآن ↓</a>
+      <a href="#books" class="btn btn-primary nav-cta">تصفح كتبي ↓</a>
       <button class="menu" id="menuToggle" aria-label="فتح القائمة" aria-expanded="false">☰</button>
     </div>
   </header>
 
   <main>
+
+    <!-- Hero -->
     <section class="hero" id="home">
       <div class="container hero-grid">
+
         <div class="hero-copy">
-          <small>المعرفة بين يديك ✦</small>
-          <h1>اكتشف عالمًا من الكتب<br><span>مع TABO BOOKS</span></h1>
+          <small>مكتبة عبدالتواب أنور ✦</small>
+
+          <h1>
+            أفكار تُكتب،<br>
+            <span>وحياة تتغير.</span>
+          </h1>
+
           <p>
-            مكتبتك الرقمية الموثوقة لاكتشاف كتب PDF في مختلف المجالات.
-            ابدأ رحلتك نحو معرفة أعمق وتطوير مستمر لذاتك.
+            مرحبًا بك في TABO BOOKS، المساحة التي تجمع مؤلفاتي
+            في تطوير الذات والمال والرواية. اكتشف كتبي وابدأ
+            رحلتك مع المعرفة والإلهام.
           </p>
 
           <div class="hero-actions">
-            <a href="#books" class="btn btn-primary">تصفح الكتب الآن ↓</a>
-            <a href="#about" class="btn btn-outline">لماذا تابو؟</a>
+            <a href="#books" class="btn btn-primary">اكتشف كتبي الآن ↓</a>
+            <a href="#about" class="btn btn-outline">عن عبدالتواب أنور</a>
           </div>
 
           <div class="stats">
             <div>
-              <strong>+1000</strong>
-              <span>كتاب رقمي</span>
+              <strong>05</strong>
+              <span>مؤلفات مبدئية</span>
             </div>
             <div>
-              <strong>+50K</strong>
-              <span>قارئ</span>
+              <strong>PDF</strong>
+              <span>كتب رقمية</span>
             </div>
             <div>
-              <strong>4.9/5</strong>
-              <span>تقييم القراء</span>
+              <strong>100%</strong>
+              <span>من تأليفي</span>
             </div>
           </div>
         </div>
 
-        <div class="hero-visual">
+        <div class="hero-visual" aria-label="غلاف توضيحي لعلامة TABO BOOKS">
           <div class="book">
             <div class="book-content">
               <div class="book-icon">📖</div>
@@ -792,219 +834,266 @@
               <p>Read More<br>Be More</p>
             </div>
           </div>
-          <div class="floating one">كتب مختارة بعناية ✦</div>
-          <div class="floating two">معرفة أكثر، حياة أفضل</div>
+
+          <div class="floating one">مؤلفات عبدالتواب أنور ✦</div>
+          <div class="floating two">اقرأ أكثر، كن أكثر</div>
         </div>
+
       </div>
     </section>
 
+    <!-- Features -->
     <section class="features">
       <div class="container features-grid">
-        <div class="feature">
-          <div class="feature-icon">⚡</div>
-          <h3>تحميل فوري</h3>
-          <p>احصل على كتابك بعد إتمام الدفع.</p>
-        </div>
-        <div class="feature">
-          <div class="feature-icon">🛡</div>
-          <h3>دفع آمن</h3>
-          <p>تجربة شراء سهلة وموثوقة.</p>
-        </div>
+
         <div class="feature">
           <div class="feature-icon">📚</div>
-          <h3>مجموعة متنوعة</h3>
-          <p>كتب في مختلف المجالات.</p>
+          <h3>مؤلفات أصلية</h3>
+          <p>كتبي الخاصة بقلم عبدالتواب أنور.</p>
         </div>
+
         <div class="feature">
-          <div class="feature-icon">💬</div>
-          <h3>دعم مستمر</h3>
-          <p>نحن هنا لمساعدتك دائمًا.</p>
+          <div class="feature-icon">⚡</div>
+          <h3>تحميل رقمي</h3>
+          <p>الوصول إلى الكتاب بعد إتمام الشراء.</p>
         </div>
+
+        <div class="feature">
+          <div class="feature-icon">💳</div>
+          <h3>دفع بالجنيه المصري</h3>
+          <p>أسعار معروضة بالجنيه المصري.</p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon">✦</div>
+          <h3>رحلة معرفية</h3>
+          <p>أفكار تساعدك على القراءة والتطور.</p>
+        </div>
+
       </div>
     </section>
 
+    <!-- My Books -->
     <section class="section books" id="books">
       <div class="container">
+
         <div class="heading">
-          <small>OUR COLLECTION</small>
-          <h2>أحدث الكتب</h2>
-          <p>مجموعة مختارة من الكتب التي تستحق القراءة.</p>
+          <small>MY BOOKS</small>
+          <h2>كتبي ومؤلفاتي</h2>
+          <p>
+            خمسة عناوين مبدئية من أعمال عبدالتواب أنور.
+            اختر الكتاب الذي يلفت انتباهك.
+          </p>
         </div>
 
         <div class="book-grid">
+
+          <!-- Book 1 -->
           <article class="book-card">
             <div class="cover yellow">
-              <span class="tag">الأكثر طلبًا</span>
+              <span class="tag">الأحدث</span>
               <div>
-                <h3>Atomic<br>Habits</h3>
-                <small>العادات الذرية</small>
+                <h3>المليون<br>الأول</h3>
+                <small>رحلة صناعة الثروة</small>
               </div>
             </div>
+
             <div class="book-info">
-              <h3>العادات الذرية</h3>
-              <p>جيمس كلير</p>
+              <h3>المليون الأول</h3>
+              <div class="author">تأليف: عبدالتواب أنور</div>
+              <p>كتاب في تطوير الذات والمال وبناء الطريق نحو أول مليون.</p>
+
               <div class="book-bottom">
-                <span class="price">$4.99</span>
-                <button class="add" data-name="العادات الذرية" data-price="4.99">أضف للسلة +</button>
+                <span class="price">300 <small>ج.م</small></span>
+                <button class="add" data-name="المليون الأول" data-price="300">
+                  أضف للسلة +
+                </button>
               </div>
             </div>
           </article>
 
+          <!-- Book 2 -->
+          <article class="book-card">
+            <div class="cover red">
+              <div>
+                <h3>إتمرد</h3>
+                <small>غيّر مجرى حياتك</small>
+              </div>
+            </div>
+
+            <div class="book-info">
+              <h3>إتمرد</h3>
+              <div class="author">تأليف: عبدالتواب أنور</div>
+              <p>كتاب تحفيزي عن التمرد على الظروف وتحويل الأحلام إلى واقع.</p>
+
+              <div class="book-bottom">
+                <span class="price">300 <small>ج.م</small></span>
+                <button class="add" data-name="إتمرد" data-price="300">
+                  أضف للسلة +
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Book 3 -->
           <article class="book-card">
             <div class="cover blue">
-              <span class="tag">مميز</span>
               <div>
-                <h3>The<br>Psychology<br>of Money</h3>
-                <small>سيكولوجية المال</small>
+                <h3>نحو<br>القمة</h3>
+                <small>طريقك إلى النجاح</small>
               </div>
             </div>
+
             <div class="book-info">
-              <h3>سيكولوجية المال</h3>
-              <p>مورغان هاوسل</p>
+              <h3>نحو القمة</h3>
+              <div class="author">تأليف: عبدالتواب أنور</div>
+              <p>رحلة في تطوير الذات، وبناء الشخصية، وصناعة تعريفك للنجاح.</p>
+
               <div class="book-bottom">
-                <span class="price">$4.99</span>
-                <button class="add" data-name="سيكولوجية المال" data-price="4.99">أضف للسلة +</button>
+                <span class="price">300 <small>ج.م</small></span>
+                <button class="add" data-name="نحو القمة" data-price="300">
+                  أضف للسلة +
+                </button>
               </div>
             </div>
           </article>
 
-          <article class="book-card">
-            <div class="cover yellow">
-              <div>
-                <h3>DEEP<br>WORK</h3>
-                <small>العمل العميق</small>
-              </div>
-            </div>
-            <div class="book-info">
-              <h3>العمل العميق</h3>
-              <p>كال نيوبورت</p>
-              <div class="book-bottom">
-                <span class="price">$4.99</span>
-                <button class="add" data-name="العمل العميق" data-price="4.99">أضف للسلة +</button>
-              </div>
-            </div>
-          </article>
-
+          <!-- Book 4 -->
           <article class="book-card">
             <div class="cover dark">
               <div>
-                <h3>THINKING<br>FAST AND<br>SLOW</h3>
-                <small>التفكير السريع والبطيء</small>
+                <h3>رواية<br>عشق</h3>
+                <small>رواية حب</small>
               </div>
             </div>
+
             <div class="book-info">
-              <h3>التفكير السريع والبطيء</h3>
-              <p>دانيال كانيمان</p>
+              <h3>رواية عشق</h3>
+              <div class="author">تأليف: عبدالتواب أنور</div>
+              <p>رواية عاطفية تأخذ القارئ إلى عالم الحب والمشاعر.</p>
+
               <div class="book-bottom">
-                <span class="price">$4.99</span>
-                <button class="add" data-name="التفكير السريع والبطيء" data-price="4.99">أضف للسلة +</button>
+                <span class="price">300 <small>ج.م</small></span>
+                <button class="add" data-name="رواية عشق" data-price="300">
+                  أضف للسلة +
+                </button>
               </div>
             </div>
           </article>
+
+          <!-- Book 5 -->
+          <article class="book-card">
+            <div class="cover yellow">
+              <span class="tag">رواية</span>
+              <div>
+                <h3>رواية<br>نهد</h3>
+                <small>حكاية حب</small>
+              </div>
+            </div>
+
+            <div class="book-info">
+              <h3>رواية نهد</h3>
+              <div class="author">تأليف: عبدالتواب أنور</div>
+              <p>رواية حب من مؤلفات عبدالتواب أنور.</p>
+
+              <div class="book-bottom">
+                <span class="price">300 <small>ج.م</small></span>
+                <button class="add" data-name="رواية نهد" data-price="300">
+                  أضف للسلة +
+                </button>
+              </div>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
+    <!-- About Author -->
     <section class="section about" id="about">
       <div class="container about-grid">
+
         <div class="about-art">
           <div>
-            <strong class="gold">TABO BOOKS</strong>
-            <p>READ MORE · BE MORE</p>
+            <strong class="gold">عبدالتواب أنور</strong>
+            <p>مؤلف TABO BOOKS</p>
+            <p>اقرأ أكثر · كن أكثر</p>
           </div>
         </div>
 
         <div class="about-copy">
-          <small class="gold">WHY TABO BOOKS?</small>
-          <h2>ابدأ رحلتك المعرفية<br><span class="gold">من كتاب واحد.</span></h2>
+          <small class="gold">ABOUT THE AUTHOR</small>
+
+          <h2>
+            كلمات تُكتب اليوم،<br>
+            <span class="gold">وأثر يبقى غدًا.</span>
+          </h2>
+
           <p>
-            نؤمن بأن الكتاب الجيد يمكن أن يغير طريقة تفكيرك،
-            ويمنحك الأدوات اللازمة لبناء حياة أفضل.
-            لذلك نسعى إلى تقديم تجربة رقمية سهلة ومميزة لمحبي القراءة.
+            أنا عبدالتواب أنور، مؤلف مجموعة من الكتب التي تتناول
+            تطوير الذات والمال والرواية. أقدم من خلال TABO BOOKS
+            مساحة تجمع أعمالي وتتيح للقراء اكتشافها في مكان واحد.
           </p>
 
           <ul class="checks">
-            <li>كتب في تطوير الذات وإدارة الأعمال.</li>
-            <li>تجربة قراءة رقمية سهلة.</li>
-            <li>اختيارات تناسب أهدافك وطموحاتك.</li>
+            <li>مؤلفات في تطوير الذات والطموح.</li>
+            <li>كتب تتناول المال وبناء المستقبل.</li>
+            <li>روايات تستكشف الحب والمشاعر.</li>
           </ul>
 
-          <a href="#books" class="btn btn-primary">اكتشف مجموعتنا ←</a>
+          <a href="#books" class="btn btn-primary">تصفح جميع كتبي ←</a>
         </div>
+
       </div>
     </section>
 
-    <section class="section reviews" id="reviews">
-      <div class="container">
-        <div class="heading">
-          <small>OUR READERS</small>
-          <h2>ماذا يقول عملاؤنا؟</h2>
-          <p>آراء تجريبية — استبدلها بتقييمات العملاء الحقيقية.</p>
-        </div>
-
-        <div class="review-grid">
-          <article class="review">
-            <div class="stars">★★★★★</div>
-            <p>تجربة شراء سهلة والكتب مفيدة جدًا. أتطلع لقراءة المزيد من إصدارات تابو.</p>
-            <strong>أحمد محمد</strong>
-            <small>قارئ TABO BOOKS</small>
-          </article>
-          <article class="review">
-            <div class="stars">★★★★★</div>
-            <p>تنوع ممتاز في الكتب والأسعار مناسبة. منصة رائعة لمحبي المعرفة.</p>
-            <strong>سارة علي</strong>
-            <small>قارئة TABO BOOKS</small>
-          </article>
-          <article class="review">
-            <div class="stars">★★★★★</div>
-            <p>التصميم جميل وتجربة التصفح مريحة. أنصح بها لكل من يحب القراءة.</p>
-            <strong>محمد خالد</strong>
-            <small>قارئ TABO BOOKS</small>
-          </article>
-        </div>
-      </div>
-    </section>
-
+    <!-- CTA -->
     <section class="cta" id="contact">
       <div class="container">
-        <h2>ابدأ رحلتك المعرفية الآن 📚</h2>
-        <p>كتاب واحد قد يكون بداية تغيير كبير في حياتك.</p>
-        <a href="#books" class="btn btn-primary">تصفح الكتب الآن ↓</a>
+        <h2>أي كتاب سيكون بدايتك؟ 📚</h2>
+        <p>اختر عنوانك المفضل وابدأ رحلتك مع TABO BOOKS.</p>
+        <a href="#books" class="btn btn-primary">اكتشف المؤلفات الآن ↓</a>
       </div>
     </section>
+
   </main>
 
+  <!-- Footer -->
   <footer>
     <div class="container">
+
       <div class="footer-top">
         <div class="footer-brand">
           <a href="#" class="logo">📖 TABO <span>BOOKS</span></a>
-          <p>اقرأ أكثر، كن أكثر.</p>
+          <p>مؤلفات عبدالتواب أنور — اقرأ أكثر، كن أكثر.</p>
         </div>
 
         <div class="footer-links">
           <a href="#home">الرئيسية</a>
-          <a href="#books">الكتب</a>
-          <a href="#about">مميزاتنا</a>
+          <a href="#books">كتبي</a>
+          <a href="#about">عن المؤلف</a>
           <a href="#contact">تواصل معنا</a>
         </div>
       </div>
 
       <div class="footer-bottom">
         <span>© <span id="year"></span> TABO BOOKS. جميع الحقوق محفوظة.</span>
-        <span>المعرفة تصنع عالمًا أفضل ❤️</span>
+        <span>عبدالتواب أنور ✦</span>
       </div>
+
     </div>
   </footer>
 
-  <!-- Shopping cart -->
-  <button class="cart-button" id="cartButton" aria-label="فتح السلة">
-    🛒 <span class="cart-count" id="cartCount">0</span>
+  <!-- Shopping Cart -->
+  <button class="cart-button" id="cartButton" aria-label="فتح سلة المشتريات">
+    🛒
+    <span class="cart-count" id="cartCount">0</span>
   </button>
 
   <div class="overlay" id="overlay"></div>
 
   <aside class="cart" id="cart" aria-label="سلة المشتريات">
+
     <div class="cart-head">
       <h3>سلة المشتريات</h3>
       <button class="close" id="closeCart" aria-label="إغلاق السلة">×</button>
@@ -1016,10 +1105,11 @@
 
     <div class="total">
       <span>الإجمالي</span>
-      <span id="total">$0.00</span>
+      <span id="total">0 ج.م</span>
     </div>
 
     <button class="btn btn-primary" id="checkout">إتمام الطلب ←</button>
+
   </aside>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -1036,26 +1126,33 @@
 
     let items = [];
 
-    document.getElementById("year").textContent = new Date().getFullYear();
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
 
+    // Mobile menu
     menuToggle.addEventListener("click", () => {
       const open = navLinks.classList.toggle("open");
       menuToggle.setAttribute("aria-expanded", String(open));
     });
 
-    navLinks.querySelectorAll("a").forEach(a => {
-      a.addEventListener("click", () => {
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
         navLinks.classList.remove("open");
         menuToggle.setAttribute("aria-expanded", "false");
       });
     });
 
+    // Notifications
     function showToast(message) {
       toast.textContent = message;
       toast.classList.add("show");
-      setTimeout(() => toast.classList.remove("show"), 2200);
+
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 2200);
     }
 
+    // Cart controls
     function openCart() {
       cart.classList.add("open");
       overlay.classList.add("open");
@@ -1066,33 +1163,53 @@
       overlay.classList.remove("open");
     }
 
-    document.getElementById("cartButton").addEventListener("click", openCart);
-    document.getElementById("closeCart").addEventListener("click", closeCartPanel);
+    document.getElementById("cartButton")
+      .addEventListener("click", openCart);
+
+    document.getElementById("closeCart")
+      .addEventListener("click", closeCartPanel);
+
     overlay.addEventListener("click", closeCartPanel);
 
+    // Add books
     document.querySelectorAll(".add").forEach(button => {
       button.addEventListener("click", () => {
         const name = button.dataset.name;
         const price = Number(button.dataset.price);
+
         const existing = items.find(item => item.name === name);
 
-        if (existing) existing.quantity++;
-        else items.push({ name, price, quantity: 1 });
+        if (existing) {
+          existing.quantity++;
+        } else {
+          items.push({
+            name,
+            price,
+            quantity: 1
+          });
+        }
 
         renderCart();
         showToast("تمت إضافة الكتاب إلى السلة 📚");
       });
     });
 
+    // Render cart
     function renderCart() {
-      const count = items.reduce((sum, item) => sum + item.quantity, 0);
-      const amount = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+      const count = items.reduce(
+        (sum, item) => sum + item.quantity, 0
+      );
+
+      const amount = items.reduce(
+        (sum, item) => sum + item.price * item.quantity, 0
+      );
 
       cartCount.textContent = count;
-      total.textContent = `$${amount.toFixed(2)}`;
+      total.textContent = `${amount.toLocaleString("ar-EG")} ج.م`;
 
       if (!items.length) {
-        cartItems.innerHTML = '<p class="empty">السلة فارغة حاليًا.</p>';
+        cartItems.innerHTML =
+          '<p class="empty">السلة فارغة حاليًا.</p>';
         return;
       }
 
@@ -1100,9 +1217,15 @@
         <div class="cart-item">
           <div>
             <strong>${escapeHtml(item.name)}</strong>
-            <small>${item.quantity} × $${item.price.toFixed(2)}</small>
+            <small>
+              ${item.quantity} ×
+              ${item.price.toLocaleString("ar-EG")} ج.م
+            </small>
           </div>
-          <button class="remove" data-index="${index}">حذف</button>
+
+          <button class="remove" data-index="${index}">
+            حذف
+          </button>
         </div>
       `).join("");
 
@@ -1124,15 +1247,19 @@
       }[char]));
     }
 
-    document.getElementById("checkout").addEventListener("click", () => {
-      if (!items.length) {
-        showToast("أضف كتابًا إلى السلة أولًا");
-        return;
-      }
+    // Checkout placeholder
+    document.getElementById("checkout")
+      .addEventListener("click", () => {
+        if (!items.length) {
+          showToast("أضف كتابًا إلى السلة أولًا");
+          return;
+        }
 
-      showToast("نسخة تجريبية — اربط الزر ببوابة الدفع أو نظام الطلب.");
-    });
+        showToast(
+          "نسخة تجريبية — اربط الزر ببوابة الدفع."
+        );
+      });
   </script>
+
 </body>
 </html>
-
