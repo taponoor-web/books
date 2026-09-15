@@ -2,125 +2,187 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="TABO BOOKS - مؤلفات عبدالتواب أنور">
-  <title>TABO BOOKS | عبدالتواب أنور</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>TABO BOOKS | مكتبة عبدالتواب أنور</title>
+
+  <meta
+    name="description"
+    content="TABO BOOKS — مكتبة رقمية تضم كتب عبدالتواب أنور في تطوير الذات والمال والرواية."
+  />
+
+  <meta
+    name="keywords"
+    content="TABO BOOKS, عبدالتواب أنور, كتب PDF, كتب تطوير الذات, كتب عربية, روايات عربية"
+  />
+
+  <meta name="author" content="عبدالتواب أنور" />
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap');
-
     :root {
-      --bg: #080d14;
-      --card: #111b27;
-      --gold: #f5b91b;
-      --gold-light: #ffda70;
-      --text: #f8fafc;
-      --muted: #a2afbd;
-      --line: rgba(255,255,255,.1);
+      --gold: #d4af67;
+      --gold-light: #f0d58f;
+      --black: #080808;
+      --dark: #111111;
+      --card: #171717;
+      --text: #f5f5f5;
+      --muted: #b7b7b7;
+      --border: rgba(212, 175, 103, 0.25);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 80px;
     }
 
     body {
-      font-family: "Cairo", sans-serif;
-      background: var(--bg);
+      font-family: "Tahoma", "Arial", sans-serif;
+      background: var(--black);
       color: var(--text);
       line-height: 1.8;
     }
 
-    a { text-decoration: none; color: inherit; }
-    button { font: inherit; cursor: pointer; }
-    .container { width: min(1160px, calc(100% - 32px)); margin: auto; }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1150px, 92%);
+      margin: auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================= */
 
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
-      background: rgba(8,13,20,.96);
-      border-bottom: 1px solid var(--line);
+      z-index: 1000;
+      background: rgba(8, 8, 8, 0.95);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
     }
 
     .nav {
-      height: 76px;
+      min-height: 80px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 25px;
     }
 
     .logo {
-      font-size: 1.45rem;
+      color: var(--gold);
+      font-size: 25px;
       font-weight: 900;
-      direction: ltr;
+      letter-spacing: 1px;
       white-space: nowrap;
     }
 
-    .logo span { color: var(--gold); }
-
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      font-size: .82rem;
-      color: #d0d7df;
+    .logo span {
+      color: var(--text);
     }
 
-    .nav-links a:hover { color: var(--gold); }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 14px;
+      transition: 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
-      padding: 100px 0 85px;
-      background:
-        radial-gradient(circle at 80% 30%, rgba(245,185,27,.13), transparent 35%),
-        linear-gradient(120deg, #080d14, #101b28);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 55px;
+      min-height: 570px;
+      display: flex;
       align-items: center;
+      text-align: center;
+      padding: 85px 0;
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(212, 175, 103, 0.14),
+          transparent 42%
+        );
     }
 
-    .hero-copy small,
-    .section-label {
+    .hero-content {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .hero-badge {
+      display: inline-block;
       color: var(--gold);
-      font-weight: 800;
-      font-size: .75rem;
-      letter-spacing: 1px;
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 5px 18px;
+      font-size: 13px;
+      margin-bottom: 20px;
     }
 
-    h1 {
-      font-size: clamp(2.1rem, 5vw, 4rem);
-      line-height: 1.4;
-      margin: 15px 0 20px;
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 76px);
+      line-height: 1.25;
+      margin-bottom: 20px;
       font-weight: 900;
     }
 
-    h1 span { color: var(--gold); }
+    .hero h1 span {
+      color: var(--gold);
+    }
 
     .hero p {
+      max-width: 680px;
+      margin: auto;
       color: var(--muted);
-      font-size: .95rem;
-      max-width: 490px;
-      margin-bottom: 28px;
+      font-size: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 35px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      border-radius: 9px;
-      padding: 12px 23px;
-      font-size: .82rem;
-      font-weight: 800;
-      border: 1px solid transparent;
-      transition: .25s;
+      min-height: 48px;
+      padding: 10px 24px;
+      border-radius: 8px;
+      border: 1px solid var(--gold);
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.3s ease;
     }
 
     .btn-primary {
@@ -134,505 +196,567 @@
     }
 
     .btn-outline {
-      border-color: rgba(245,185,27,.5);
-      color: var(--gold-light);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .hero-book {
-      width: 280px;
-      aspect-ratio: 3 / 4;
-      margin: auto;
-      border: 4px solid #293b4c;
-      border-radius: 10px 18px 18px 10px;
-      background: linear-gradient(145deg, #23384b, #0c131b);
-      box-shadow: 20px 30px 50px rgba(0,0,0,.5);
-      display: grid;
-      place-items: center;
-      text-align: center;
-      transform: rotate(-6deg);
-    }
-
-    .hero-book-inner {
-      width: 80%;
-      padding: 30px 12px;
-      border: 1px solid rgba(245,185,27,.5);
-    }
-
-    .hero-book strong {
-      display: block;
       color: var(--gold);
-      font-size: 1.5rem;
-      direction: ltr;
+      background: transparent;
     }
 
-    .hero-book p {
-      font-size: .75rem;
-      margin: 8px 0 0;
+    .btn-outline:hover {
+      background: var(--gold);
+      color: #111;
     }
 
-    .section { padding: 85px 0; }
+    /* =========================
+       SECTION HEADINGS
+    ========================= */
 
-    .heading {
+    .section {
+      padding: 85px 0;
+    }
+
+    .section-heading {
       text-align: center;
-      max-width: 650px;
-      margin: 0 auto 45px;
+      margin-bottom: 45px;
     }
 
-    .heading h2 {
-      font-size: clamp(1.8rem, 4vw, 2.7rem);
-      line-height: 1.5;
-      margin: 8px 0;
+    .section-heading small {
+      color: var(--gold);
+      font-weight: 800;
+      font-size: 14px;
     }
 
-    .heading p { color: var(--muted); font-size: .85rem; }
+    .section-heading h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      margin: 8px 0 12px;
+    }
 
-    .books { background: #0c141e; }
+    .section-heading p {
+      color: var(--muted);
+      max-width: 680px;
+      margin: auto;
+    }
 
-    .book-grid {
+    /* =========================
+       BOOKS
+    ========================= */
+
+    .books-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
     }
 
     .book-card {
       background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 14px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
       overflow: hidden;
-      transition: .25s;
+      display: flex;
+      flex-direction: column;
+      transition: 0.3s ease;
     }
 
     .book-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(245,185,27,.55);
+      transform: translateY(-6px);
+      border-color: var(--gold);
     }
 
-    .cover {
-      height: 245px;
-      display: grid;
-      place-items: center;
+    .book-cover {
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      padding: 25px;
-      position: relative;
-      background: linear-gradient(145deg, #e2af20, #7d5a08);
-      color: #111;
+      padding: 20px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(212, 175, 103, 0.28),
+          rgba(20, 20, 20, 0.95)
+        );
+      border-bottom: 1px solid var(--border);
     }
 
-    .cover.blue {
-      background: linear-gradient(145deg, #35536e, #122333);
-      color: white;
-    }
-
-    .cover.red {
-      background: linear-gradient(145deg, #733d46, #24151b);
-      color: white;
-    }
-
-    .cover.dark {
-      background: linear-gradient(145deg, #35404a, #10151a);
-      color: white;
-    }
-
-    .cover h3 {
-      font-size: 1.65rem;
+    .book-cover h3 {
+      font-size: 23px;
       line-height: 1.5;
-      font-weight: 900;
+      color: var(--gold-light);
     }
 
-    .cover small {
-      display: block;
-      font-size: .7rem;
-      margin-top: 10px;
-      opacity: .8;
+    .book-info {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 20px;
     }
-
-    .cover .tag {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: var(--gold);
-      color: #111;
-      padding: 2px 9px;
-      border-radius: 4px;
-      font-size: .6rem;
-      font-weight: 800;
-    }
-
-    .book-info { padding: 20px; }
 
     .book-info h3 {
-      font-size: 1rem;
-      margin-bottom: 4px;
-    }
-
-    .author {
-      color: var(--gold-light);
-      font-size: .76rem;
+      color: var(--text);
+      font-size: 20px;
+      margin-bottom: 10px;
     }
 
     .book-info p {
       color: var(--muted);
-      font-size: .75rem;
-      margin: 7px 0 18px;
-      min-height: 52px;
+      font-size: 14px;
+      margin-bottom: 20px;
+      flex: 1;
     }
 
-    .book-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .price {
+    .book-price {
       color: var(--gold);
+      font-size: 22px;
       font-weight: 900;
-      font-size: 1.1rem;
-      white-space: nowrap;
+      margin-bottom: 16px;
     }
 
-    .price small {
-      color: var(--muted);
-      font-size: .65rem;
-      font-weight: 400;
+    .book-btn {
+      width: 100%;
     }
 
-    .buy-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    /* =========================
+       ABOUT AUTHOR
+    ========================= */
+
+    .about-box {
+      max-width: 850px;
+      margin: auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 35px;
       text-align: center;
+    }
+
+    .about-box h3 {
+      color: var(--gold);
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .about-box p {
+      color: var(--muted);
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .info-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 25px 18px;
+      text-align: center;
+    }
+
+    .info-icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .info-card h3 {
+      color: var(--gold);
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .info-card p,
+    .info-card a {
+      color: var(--muted);
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .info-card a:hover {
+      color: var(--gold);
+    }
+
+    /* =========================
+       POLICIES
+    ========================= */
+
+    .policy-box {
+      max-width: 900px;
+      margin: auto;
+      padding: 35px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      color: var(--muted);
+    }
+
+    .policy-box p {
+      margin-bottom: 18px;
+    }
+
+    .policy-box ul {
+      padding-right: 25px;
+      margin-bottom: 20px;
+    }
+
+    .policy-box li {
+      margin-bottom: 8px;
+    }
+
+    .policy-box strong {
+      color: var(--text);
+    }
+
+    .highlight-contact {
+      text-align: center;
+      color: var(--gold);
+      font-size: 26px;
+      font-weight: 900;
+      direction: ltr;
+    }
+
+    .highlight-contact a {
+      color: var(--gold);
+    }
+
+    .draft-label {
+      display: inline-block;
       background: var(--gold);
       color: #111;
-      border-radius: 7px;
-      padding: 8px 12px;
-      font-size: .7rem;
+      padding: 6px 15px;
+      border-radius: 50px;
+      font-size: 12px;
       font-weight: 900;
-      transition: .25s;
+      margin-bottom: 20px;
     }
 
-    .buy-button:hover {
-      background: var(--gold-light);
-      transform: translateY(-2px);
-    }
-
-    .about {
-      background: var(--bg);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .about-art {
-      min-height: 300px;
-      border: 1px solid rgba(245,185,27,.25);
-      border-radius: 20px;
-      background: linear-gradient(145deg, #1b2a39, #0d151e);
-      display: grid;
-      place-items: center;
+    .author-name {
+      color: var(--gold);
       text-align: center;
-      padding: 25px;
-    }
-
-    .about-art strong {
-      display: block;
-      color: var(--gold);
-      font-size: clamp(1.7rem, 4vw, 2.7rem);
-    }
-
-    .about-art p {
-      color: var(--muted);
-      font-size: .75rem;
-    }
-
-    .about-copy h2 {
-      font-size: clamp(1.7rem, 4vw, 2.5rem);
-      line-height: 1.5;
-      margin: 10px 0 20px;
-    }
-
-    .about-copy p {
-      color: var(--muted);
-      font-size: .9rem;
-    }
-
-    .checks {
-      list-style: none;
-      margin: 22px 0;
-      font-size: .82rem;
-    }
-
-    .checks li::before {
-      content: "✓";
-      color: var(--gold);
+      font-size: 25px;
       font-weight: 900;
-      margin-left: 10px;
+      margin: 25px 0;
     }
+
+    .copyright {
+      color: var(--gold);
+      text-align: center;
+      font-weight: 800;
+      margin-top: 30px;
+    }
+
+    .draft-note {
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      font-size: 13px;
+      color: #888;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
-      background: #060a10;
-      padding: 40px 0 20px;
+      background: #050505;
+      border-top: 1px solid var(--border);
+      padding: 35px 0;
+      text-align: center;
     }
 
-    .footer-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 25px;
-      flex-wrap: wrap;
-      margin-bottom: 25px;
-    }
-
-    .footer-top p {
-      color: var(--muted);
-      font-size: .75rem;
-      margin-top: 8px;
+    footer p {
+      color: #888;
+      font-size: 14px;
     }
 
     .footer-links {
       display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
       gap: 22px;
-      color: var(--muted);
-      font-size: .75rem;
-      flex-wrap: wrap;
+      margin-top: 15px;
     }
 
-    .footer-links a:hover { color: var(--gold); }
-
-    .footer-bottom {
-      border-top: 1px solid var(--line);
-      padding-top: 18px;
-      color: #687585;
-      font-size: .7rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      flex-wrap: wrap;
+    .footer-links a {
+      color: var(--gold);
+      font-size: 14px;
     }
 
-    @media (max-width: 900px) {
-      .hero-grid, .about-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1100px) {
+      .books-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
 
-      .hero-copy { text-align: center; }
-      .hero-copy p { margin-inline: auto; }
-      .hero-actions { justify-content: center; }
-
-      .book-grid { grid-template-columns: repeat(2, 1fr); }
+      .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
-    @media (max-width: 600px) {
-      .container { width: calc(100% - 28px); }
-      .section { padding: 60px 0; }
-      .nav { height: 68px; }
+    @media (max-width: 700px) {
+      .nav {
+        flex-direction: column;
+        justify-content: center;
+        padding: 18px 0;
+      }
 
-      .nav-links {
+      nav {
+        justify-content: center;
         gap: 14px;
-        font-size: .7rem;
       }
 
-      .hero { padding: 65px 0; }
-      .hero-book { width: 245px; }
-      .book-grid { grid-template-columns: 1fr; }
-      .cover { height: 230px; }
-      .footer-top, .footer-bottom { flex-direction: column; }
+      .books-grid,
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 65px 0;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .policy-box,
+      .about-box {
+        padding: 25px 20px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Header -->
+  <!-- =========================
+       HEADER
+  ========================= -->
+
   <header>
     <div class="container nav">
-      <a href="#" class="logo">📖 TABO <span>BOOKS</span></a>
+      <a href="#home" class="logo">
+        TABO <span>BOOKS 📚</span>
+      </a>
 
-      <nav class="nav-links">
-        <a href="#home">الرئيسية</a>
-        <a href="#books">كتبي</a>
+      <nav>
+        <a href="#books">الكتب</a>
         <a href="#about">عن المؤلف</a>
+        <a href="#contact">التواصل</a>
+        <a href="#refund-policy">الاسترداد</a>
+        <a href="#intellectual-property">حقوق النشر</a>
       </nav>
-
-      <a href="#books" class="btn btn-primary">تصفح كتبي ↓</a>
     </div>
   </header>
 
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
   <main>
 
-    <!-- Hero -->
     <section class="hero" id="home">
-      <div class="container hero-grid">
+      <div class="container hero-content">
 
-        <div class="hero-copy">
-          <small>مكتبة عبدالتواب أنور ✦</small>
+        <span class="hero-badge">
+          مكتبة رقمية مستقلة
+        </span>
 
-          <h1>
-            أفكار تُكتب،<br>
-            <span>وحياة تتغير.</span>
-          </h1>
+        <h1>
+          اقرأ أكثر،<br />
+          <span>وتحوّل إلى الأفضل</span>
+        </h1>
 
-          <p>
-            مرحبًا بك في TABO BOOKS، حيث تجد مؤلفات عبدالتواب أنور
-            في تطوير الذات والمال والرواية، في مكان واحد.
-          </p>
+        <p>
+          اكتشف مجموعة من الكتب والروايات التي تجمع بين تطوير الذات،
+          والوعي، والمال، وتجارب الإنسان ومشاعره.
+        </p>
 
-          <div class="hero-actions">
-            <a href="#books" class="btn btn-primary">اكتشف كتبي الآن ↓</a>
-            <a href="#about" class="btn btn-outline">عن المؤلف</a>
-          </div>
-        </div>
+        <div class="hero-actions">
+          <a href="#books" class="btn btn-primary">
+            تصفح الكتب
+          </a>
 
-        <div class="hero-book">
-          <div class="hero-book-inner">
-            <strong>TABO BOOKS</strong>
-            <p>عبدالتواب أنور</p>
-            <p>اقرأ أكثر، كن أكثر</p>
-          </div>
+          <a href="#about" class="btn btn-outline">
+            عن المؤلف
+          </a>
         </div>
 
       </div>
     </section>
 
-    <!-- Books -->
-    <section class="section books" id="books">
+
+    <!-- =========================
+         BOOKS SECTION
+    ========================= -->
+
+    <section class="section" id="books">
       <div class="container">
 
-        <div class="heading">
-          <div class="section-label">MY BOOKS</div>
-          <h2>كتبي ومؤلفاتي</h2>
+        <div class="section-heading">
+          <small>إصدارات TABO BOOKS</small>
+          <h2>كتبنا</h2>
           <p>
-            اختر كتابك المفضل، ثم اضغط على «شراء وتحميل»
-            للانتقال إلى صفحة الدفع الخاصة به.
+            اختر الكتاب الذي يناسب رحلتك، ثم اضغط على
+            «شراء وتحميل» للانتقال إلى صفحة الدفع الخاصة به.
           </p>
         </div>
 
-        <div class="book-grid">
+        <div class="books-grid">
 
-          <!-- 1. المليون الأول -->
+          <!-- BOOK 1 -->
           <article class="book-card">
-            <div class="cover">
-              <span class="tag">الأحدث</span>
-              <div>
-                <h3>المليون<br>الأول</h3>
-                <small>رحلة صناعة الثروة</small>
-              </div>
+            <div class="book-cover">
+              <h3>المليون الأول</h3>
             </div>
 
             <div class="book-info">
               <h3>المليون الأول</h3>
-              <div class="author">تأليف: عبدالتواب أنور</div>
-              <p>كتاب في تطوير الذات والمال وبناء الطريق نحو أول مليون.</p>
 
-              <div class="book-bottom">
-                <span class="price">300 <small>ج.م</small></span>
-                <a class="buy-button" data-book="million" href="#">
-                  شراء وتحميل
-                </a>
+              <p>
+                أفكار ومبادئ عملية لبناء الوعي المالي،
+                وتطوير العقلية التي تساعدك على صناعة أول مليون.
+              </p>
+
+              <div class="book-price">
+                300 ج.م
               </div>
+
+              <a
+                class="btn btn-primary book-btn"
+                href="ضع_هنا_رابط_دفع_المليون_الأول"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                شراء وتحميل
+              </a>
             </div>
           </article>
 
-          <!-- 2. إتمرد -->
+
+          <!-- BOOK 2 -->
           <article class="book-card">
-            <div class="cover red">
-              <div>
-                <h3>إتمرد</h3>
-                <small>غيّر مجرى حياتك</small>
-              </div>
+            <div class="book-cover">
+              <h3>إتمرد</h3>
             </div>
 
             <div class="book-info">
               <h3>إتمرد</h3>
-              <div class="author">تأليف: عبدالتواب أنور</div>
-              <p>كتاب تحفيزي عن التمرد على الظروف وتحويل الأحلام إلى واقع.</p>
 
-              <div class="book-bottom">
-                <span class="price">300 <small>ج.م</small></span>
-                <a class="buy-button" data-book="rebel" href="#">
-                  شراء وتحميل
-                </a>
+              <p>
+                رحلة فكرية للخروج من الخوف،
+                وكسر القيود الداخلية، واستعادة حرية القرار.
+              </p>
+
+              <div class="book-price">
+                300 ج.م
               </div>
+
+              <a
+                class="btn btn-primary book-btn"
+                href="ضع_هنا_رابط_دفع_إتمرد"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                شراء وتحميل
+              </a>
             </div>
           </article>
 
-          <!-- 3. نحو القمة -->
+
+          <!-- BOOK 3 -->
           <article class="book-card">
-            <div class="cover blue">
-              <div>
-                <h3>نحو<br>القمة</h3>
-                <small>طريقك إلى النجاح</small>
-              </div>
+            <div class="book-cover">
+              <h3>نحو القمة</h3>
             </div>
 
             <div class="book-info">
               <h3>نحو القمة</h3>
-              <div class="author">تأليف: عبدالتواب أنور</div>
-              <p>رحلة في تطوير الذات وبناء الشخصية وصناعة تعريفك للنجاح.</p>
 
-              <div class="book-bottom">
-                <span class="price">300 <small>ج.م</small></span>
-                <a class="buy-button" data-book="summit" href="#">
-                  شراء وتحميل
-                </a>
+              <p>
+                دليل تحفيزي لبناء الشخصية،
+                وتطوير العادات، وتحويل الطموح إلى خطوات عملية.
+              </p>
+
+              <div class="book-price">
+                300 ج.م
               </div>
+
+              <a
+                class="btn btn-primary book-btn"
+                href="ضع_هنا_رابط_دفع_نحو_القمة"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                شراء وتحميل
+              </a>
             </div>
           </article>
 
-          <!-- 4. رواية عشق -->
+
+          <!-- BOOK 4 -->
           <article class="book-card">
-            <div class="cover dark">
-              <div>
-                <h3>رواية<br>عشق</h3>
-                <small>رواية حب</small>
-              </div>
+            <div class="book-cover">
+              <h3>رواية عشق</h3>
             </div>
 
             <div class="book-info">
               <h3>رواية عشق</h3>
-              <div class="author">تأليف: عبدالتواب أنور</div>
-              <p>رواية عاطفية تأخذ القارئ إلى عالم الحب والمشاعر.</p>
 
-              <div class="book-bottom">
-                <span class="price">300 <small>ج.م</small></span>
-                <a class="buy-button" data-book="eshq" href="#">
-                  شراء وتحميل
-                </a>
+              <p>
+                رواية عاطفية عن الحب،
+                والاختيارات، والحنين، والتحولات التي تصنعها المشاعر.
+              </p>
+
+              <div class="book-price">
+                300 ج.م
               </div>
+
+              <a
+                class="btn btn-primary book-btn"
+                href="ضع_هنا_رابط_دفع_عشق"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                شراء وتحميل
+              </a>
             </div>
           </article>
 
-          <!-- 5. رواية نهد -->
+
+          <!-- BOOK 5 -->
           <article class="book-card">
-            <div class="cover">
-              <span class="tag">رواية</span>
-              <div>
-                <h3>رواية<br>نهد</h3>
-                <small>حكاية حب</small>
-              </div>
+            <div class="book-cover">
+              <h3>رواية نهد</h3>
             </div>
 
             <div class="book-info">
               <h3>رواية نهد</h3>
-              <div class="author">تأليف: عبدالتواب أنور</div>
-              <p>رواية حب من مؤلفات عبدالتواب أنور.</p>
 
-              <div class="book-bottom">
-                <span class="price">300 <small>ج.م</small></span>
-                <a class="buy-button" data-book="nahd" href="#">
-                  شراء وتحميل
-                </a>
+              <p>
+                رواية وجدانية تستكشف الحب،
+                والفقد، والذاكرة، وتعقيدات العلاقات الإنسانية.
+              </p>
+
+              <div class="book-price">
+                300 ج.م
               </div>
+
+              <a
+                class="btn btn-primary book-btn"
+                href="ضع_هنا_رابط_دفع_نهد"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                شراء وتحميل
+              </a>
             </div>
           </article>
 
@@ -640,175 +764,321 @@
       </div>
     </section>
 
-    <!-- About -->
-    <section class="section about" id="about">
-      <div class="container about-grid">
 
-        <div class="about-art">
-          <div>
-            <strong>عبدالتواب أنور</strong>
-            <p>مؤلف TABO BOOKS</p>
-            <p>اقرأ أكثر · كن أكثر</p>
-          </div>
+    <!-- =========================
+         ABOUT AUTHOR
+    ========================= -->
+
+    <section class="section" id="about">
+      <div class="container">
+
+        <div class="section-heading">
+          <small>عن TABO BOOKS</small>
+          <h2>عن المؤلف</h2>
         </div>
 
-        <div class="about-copy">
-          <div class="section-label">ABOUT THE AUTHOR</div>
-
-          <h2>
-            كلمات تُكتب اليوم،<br>
-            <span style="color:var(--gold)">وأثر يبقى غدًا.</span>
-          </h2>
+        <div class="about-box">
+          <h3>عبدالتواب أنور</h3>
 
           <p>
-            أنا عبدالتواب أنور، مؤلف مجموعة من الكتب التي تتناول
-            تطوير الذات والمال والرواية. أقدم من خلال TABO BOOKS
-            مساحة تجمع أعمالي وتتيح للقراء اكتشافها في مكان واحد.
+            كاتب ومؤلف يهتم بتطوير الإنسان، والوعي،
+            والمال، والعلاقات، والأسئلة العميقة التي تصنع
+            رحلة الإنسان نحو حياة أكثر معنى.
           </p>
-
-          <ul class="checks">
-            <li>مؤلفات في تطوير الذات والطموح.</li>
-            <li>كتب تتناول المال وبناء المستقبل.</li>
-            <li>روايات تستكشف الحب والمشاعر.</li>
-          </ul>
-
-          <a href="#books" class="btn btn-primary">تصفح كتبي ←</a>
         </div>
 
+      </div>
+    </section>
+
+
+    <!-- =========================
+         CONTACT SECTION
+    ========================= -->
+
+    <section class="section" id="contact">
+      <div class="container">
+
+        <div class="section-heading">
+          <small>تواصل معنا</small>
+          <h2>نحن هنا لمساعدتك</h2>
+
+          <p>
+            إذا واجهتك أي مشكلة في الدفع أو تحميل الكتاب،
+            يمكنك التواصل معنا عبر البيانات التالية.
+          </p>
+        </div>
+
+        <div class="info-grid">
+
+          <div class="info-card">
+            <div class="info-icon">📞</div>
+            <h3>رقم التواصل</h3>
+
+            <p>
+              <a href="tel:01122965693">
+                01122965693
+              </a>
+            </p>
+          </div>
+
+
+          <div class="info-card">
+            <div class="info-icon">💬</div>
+            <h3>واتساب</h3>
+
+            <p>
+              <a
+                href="https://wa.me/201122965693"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                تواصل معنا عبر واتساب
+              </a>
+            </p>
+          </div>
+
+
+          <div class="info-card">
+            <div class="info-icon">📍</div>
+            <h3>العنوان</h3>
+
+            <p>
+              محافظة أسيوط، مركز ديروط،
+              قرية أمشول، جمهورية مصر العربية
+            </p>
+          </div>
+
+
+          <div class="info-card">
+            <div class="info-icon">✉️</div>
+            <h3>البريد الإلكتروني</h3>
+
+            <p>
+              ضع بريدك الإلكتروني هنا
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         REFUND POLICY
+    ========================= -->
+
+    <section class="section" id="refund-policy">
+      <div class="container">
+
+        <div class="section-heading">
+          <small>سياسة الموقع</small>
+          <h2>سياسة الاسترداد والاسترجاع</h2>
+        </div>
+
+        <div class="policy-box">
+
+          <p>
+            نحرص في <strong>TABO BOOKS</strong> على تقديم كتب إلكترونية
+            عالية الجودة. جميع المنتجات المتاحة على الموقع هي منتجات
+            رقمية بصيغة PDF يتم توفيرها للعميل بعد إتمام عملية الدفع.
+          </p>
+
+          <p>
+            نظرًا للطبيعة الرقمية للمنتج، لا يمكن استرداد قيمة الكتاب
+            بعد تسليمه أو بدء تحميله، باستثناء الحالات التالية:
+          </p>
+
+          <ul>
+            <li>
+              خصم المبلغ من العميل دون إتمام الطلب.
+            </li>
+
+            <li>
+              إرسال كتاب مختلف عن الكتاب الذي تم شراؤه.
+            </li>
+
+            <li>
+              وجود عيب تقني يمنع فتح الملف أو تحميله،
+              وعدم القدرة على حل المشكلة.
+            </li>
+
+            <li>
+              تكرار عملية الدفع للطلب نفسه عن طريق الخطأ.
+            </li>
+          </ul>
+
+          <p>
+            في حال وجود مشكلة، يُرجى التواصل معنا خلال مدة لا تتجاوز
+            <strong>7 أيام من تاريخ الشراء</strong> عبر رقم التواصل:
+          </p>
+
+          <p class="highlight-contact">
+            <a href="tel:01122965693">
+              01122965693
+            </a>
+          </p>
+
+          <p>
+            ويُرجى توضيح البيانات التالية عند التواصل:
+          </p>
+
+          <ul>
+            <li>اسم المشتري.</li>
+            <li>رقم عملية الدفع.</li>
+            <li>تاريخ الدفع.</li>
+            <li>اسم الكتاب الذي تم شراؤه.</li>
+            <li>وصف المشكلة بالتفصيل.</li>
+            <li>صورة من إيصال الدفع عند الحاجة.</li>
+          </ul>
+
+          <p>
+            يتم فحص الطلب والرد على العميل خلال مدة لا تتجاوز
+            <strong>7 أيام عمل</strong>. وفي حال الموافقة على الاسترداد،
+            تتم إعادة المبلغ إلى وسيلة الدفع المستخدمة أو وفقًا
+            لإجراءات مزود خدمة الدفع.
+          </p>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =========================
+         INTELLECTUAL PROPERTY
+    ========================= -->
+
+    <section class="section" id="intellectual-property">
+      <div class="container">
+
+        <div class="section-heading">
+          <small>حقوق النشر</small>
+          <h2>إقرار الملكية الفكرية</h2>
+        </div>
+
+        <div class="policy-box">
+
+          <div class="draft-label">
+            مسودة إقرار — سيتم استكمال تسجيله ومراجعته لاحقًا
+          </div>
+
+          <p>
+            جميع الكتب والمحتويات المنشورة على موقع
+            <strong>TABO BOOKS</strong>، بما في ذلك النصوص والعناوين
+            والتصميمات والأغلفة والمواد الرقمية، هي ملكية فكرية خاصة
+            بالمؤلف:
+          </p>
+
+          <p class="author-name">
+            عبدالتواب أنور
+          </p>
+
+          <p>
+            ويُحظر دون الحصول على إذن كتابي مسبق من صاحب الحقوق:
+          </p>
+
+          <ul>
+            <li>نسخ الكتاب أو إعادة نشره.</li>
+            <li>إعادة بيعه أو توزيعه مجانًا أو بمقابل.</li>
+            <li>
+              رفع الملف على مواقع التحميل أو مجموعات التواصل الاجتماعي.
+            </li>
+            <li>مشاركة رابط التحميل مع الآخرين.</li>
+            <li>تعديل محتوى الكتاب أو نسبته إلى شخص آخر.</li>
+            <li>
+              استخدام الغلاف أو النصوص أو أجزاء من الكتاب لأغراض تجارية.
+            </li>
+          </ul>
+
+          <p>
+            يسمح للمشتري باستخدام النسخة التي حصل عليها للاستخدام
+            الشخصي فقط، ولا يمنحه ذلك الحق في إعادة توزيعها أو بيعها
+            أو نشرها.
+          </p>
+
+          <p class="copyright">
+            © 2026 عبدالتواب أنور – TABO BOOKS
+            <br />
+            جميع الحقوق محفوظة.
+          </p>
+
+          <p class="draft-note">
+            هذا النص موضوع حاليًا كمسودة تعريفية بحقوق الملكية الفكرية،
+            وسيتم مراجعته واستكمال إجراءات تسجيله رسميًا لاحقًا.
+          </p>
+
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Footer -->
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
   <footer>
     <div class="container">
 
-      <div class="footer-top">
-        <div>
-          <a href="#" class="logo">📖 TABO <span>BOOKS</span></a>
-          <p>مؤلفات عبدالتواب أنور — اقرأ أكثر، كن أكثر.</p>
-        </div>
+      <p>
+        © 2026 TABO BOOKS — جميع الحقوق محفوظة
+      </p>
 
-        <div class="footer-links">
-          <a href="#home">الرئيسية</a>
-          <a href="#books">كتبي</a>
-          <a href="#about">عن المؤلف</a>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <span>© <span id="year"></span> TABO BOOKS. جميع الحقوق محفوظة.</span>
-        <span>عبدالتواب أنور ✦</span>
+      <div class="footer-links">
+        <a href="#contact">التواصل</a>
+        <a href="#refund-policy">سياسة الاسترداد</a>
+        <a href="#intellectual-property">
+          حقوق الملكية الفكرية
+        </a>
       </div>
 
     </div>
   </footer>
 
+
+  <!-- =========================
+       BOOK PAYMENT DATA
+       يمكنك استخدام هذا القسم لاحقًا
+       إذا أردت إدارة الروابط من مكان واحد.
+  ========================= -->
+
   <script>
-    /*
-      ==================================================
-      إعدادات الكتب — عدّل روابط كل كتاب هنا فقط
-      ==================================================
-
-      paymentUrl  = رابط الدفع الخاص بالكتاب.
-      downloadUrl = رابط PDF الخاص بالكتاب.
-
-      مهم:
-      رابط التحميل لا يصبح محميًا بمجرد وضعه في HTML.
-      يجب أن تتولى بوابة الدفع أو نظام الخادم تسليم
-      رابط التحميل بعد نجاح عملية الدفع.
-    */
-
     const books = {
-
-      million: {
-        name: "المليون الأول",
+      firstMillion: {
+        title: "المليون الأول",
         price: 300,
-
         paymentUrl: "ضع_هنا_رابط_دفع_المليون_الأول",
-
         downloadUrl: "ضع_هنا_رابط_تحميل_المليون_الأول"
       },
 
       rebel: {
-        name: "إتمرد",
+        title: "إتمرد",
         price: 300,
-
         paymentUrl: "ضع_هنا_رابط_دفع_إتمرد",
-
         downloadUrl: "ضع_هنا_رابط_تحميل_إتمرد"
       },
 
-      summit: {
-        name: "نحو القمة",
+      towardTheTop: {
+        title: "نحو القمة",
         price: 300,
-
         paymentUrl: "ضع_هنا_رابط_دفع_نحو_القمة",
-
         downloadUrl: "ضع_هنا_رابط_تحميل_نحو_القمة"
       },
 
       eshq: {
-        name: "رواية عشق",
+        title: "رواية عشق",
         price: 300,
-
-        paymentUrl: "ضع_هنا_رابط_دفع_رواية_عشق",
-
-        downloadUrl: "ضع_هنا_رابط_تحميل_رواية_عشق"
+        paymentUrl: "ضع_هنا_رابط_دفع_عشق",
+        downloadUrl: "ضع_هنا_رابط_تحميل_عشق"
       },
 
-      nahd: {
-        name: "رواية نهد",
+      nehad: {
+        title: "رواية نهد",
         price: 300,
-
-        paymentUrl: "ضع_هنا_رابط_دفع_رواية_نهد",
-
-        downloadUrl: "ضع_هنا_رابط_تحميل_رواية_نهد"
+        paymentUrl: "ضع_هنا_رابط_دفع_نهد",
+        downloadUrl: "ضع_هنا_رابط_تحميل_نهد"
       }
-
     };
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-
-    /*
-      كل زر مرتبط بكتاب مستقل.
-      الضغط عليه ينقل العميل إلى رابط الدفع الخاص بذلك الكتاب.
-    */
-
-    document.querySelectorAll("[data-book]").forEach(button => {
-
-      button.addEventListener("click", event => {
-
-        const bookId = button.dataset.book;
-        const book = books[bookId];
-
-        if (!book) {
-          event.preventDefault();
-          alert("تعذر العثور على بيانات هذا الكتاب.");
-          return;
-        }
-
-        if (
-          !book.paymentUrl ||
-          book.paymentUrl.startsWith("ضع_هنا")
-        ) {
-          event.preventDefault();
-
-          alert(
-            "لم يتم إضافة رابط الدفع لهذا الكتاب بعد."
-          );
-
-          return;
-        }
-
-        // يمكن استبدال href برابط الدفع الفعلي لكل كتاب.
-        button.href = book.paymentUrl;
-
-      });
-
-    });
   </script>
 
 </body>
